@@ -39,9 +39,13 @@ auto_atualizar() {
     DEPOIS=$(git rev-parse HEAD 2>/dev/null)
     if [ "$ANTES" != "$DEPOIS" ]; then
       echo -e "${GREEN}  ✓  Atualizado! (${ANTES:0:7} → ${DEPOIS:0:7})${NC}"
+      echo -e "${CYAN}  📋 O que foi atualizado:${NC}"
+      git log --oneline "${ANTES}..${DEPOIS}" 2>/dev/null | while IFS= read -r linha; do
+        echo -e "     ${CYAN}•${NC} ${linha}"
+      done
       return 0   # houve atualização
     else
-      echo -e "${GREEN}  ✓  Já na versão mais recente.${NC}"
+      echo -e "${GREEN}  ✓  Já na versão mais recente. (${DEPOIS:0:7})${NC}"
       return 1   # sem alterações
     fi
   else
@@ -66,6 +70,11 @@ auto_atualizar() {
           # Forçar timestamp de package.json para agora para que verificar_deps detete a mudança
           touch package.json 2>/dev/null || true
           echo -e "${GREEN}  ✓  Atualizado via download!${NC}"
+          # Mostrar último commit via API (melhor esforço)
+          COMMIT_INFO=$(curl -s --max-time 10 \
+            "https://api.github.com/repos/${DIST_REPO}/commits/${DIST_BRANCH}" \
+            2>/dev/null | grep -o '"message":"[^"]*"' | head -1 | sed 's/"message":"//;s/"//')
+          [ -n "$COMMIT_INFO" ] && echo -e "     ${CYAN}•${NC} ${COMMIT_INFO}"
           rm -rf "$TMP_ZIP" "$TMP_DIR"
           return 0
         fi
