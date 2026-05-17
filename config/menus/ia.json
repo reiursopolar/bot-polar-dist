@@ -1,0 +1,20 @@
+{
+  "_info": "Menu de Inteligência Artificial. {nome} é substituído pelo nome do bot.",
+  "titulo": "INTELIGÊNCIA ARTIFICIAL",
+  "emoji": "🤖",
+  "secoes": [
+    { "nome": "CONVERSA", "emoji": "💬", "cmds": [
+      ["polar [pergunta]", "Perguntar ao {nome}"],
+      ["voz [pergunta]", "Resposta em áudio 👑"],
+      ["resumir", "Resumir msg citada"],
+      ["traduzir [txt]", "Traduzir para PT 👑"],
+      ["limparchat", "Limpar histórico IA"]
+    ]},
+    { "nome": "ÁUDIO INTELIGENTE", "emoji": "🎙️", "cmds": [
+      {"raw": "_Envia um áudio → bot transcreve_"},
+      {"raw": "_e responde em voz! 🎤_"},
+      {"raw": "_Responde às msgs para continuar 💬_"}
+    ]}
+  ],
+  "rodape": "👑 exclusivo VIP · Menciona @{nome}"
+}

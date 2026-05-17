@@ -1,0 +1,30 @@
+{
+  "_info": "Menu da Loja. Edita planos, descrições e textos de rodapé.",
+  "titulo": "LOJA",
+  "emoji": "🏪",
+  "secoes": [
+    { "nome": "ALUGUEL DE GRUPO", "emoji": "📦", "cmds": [
+      ["alugar", "Ver planos disponíveis"],
+      ["alugar [plano]", "Comprar plano (privado)"],
+      ["renovar", "Renovar plano atual"],
+      ["renovar [plano]", "Renovar com plano específico"],
+      ["meuplano", "Os teus grupos + progresso"],
+      ["botplano", "Estado do plano no grupo"]
+    ]},
+    { "nome": "VIP — IA NO PRIVADO", "emoji": "👑", "cmds": [
+      ["vip", "Ver planos VIP"],
+      ["vip [plano]", "Comprar VIP (privado)"],
+      ["meuvip", "Ver o teu VIP ativo"],
+      ["menuvip", "Todos os comandos VIP"]
+    ]},
+    { "nome": "ADQUIRIR O BOT", "emoji": "🤖", "cmds": [
+      ["comprarbot", "Ver planos de aquisição"],
+      ["comprarbot [plano]", "Comprar o bot (privado)"]
+    ]},
+    { "nome": "APOIAR", "emoji": "💜", "cmds": [
+      ["apoiar", "Ver opções de donativo"],
+      ["apoiar [valor]", "Donativo via PIX"]
+    ]}
+  ],
+  "rodape": "💳 Pagamento automático via PIX · usar no privado\n🔄 Renovação acumula tempo — nunca perdes dias!"
+}

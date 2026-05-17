@@ -1,0 +1,40 @@
+{
+  "_info": "Menu de Economia e RPG.",
+  "titulo": "ECONOMIA & RPG",
+  "emoji": "⚔️",
+  "secoes": [
+    { "nome": "SALDO", "emoji": "💰", "cmds": [
+      ["saldo / banco", "Ver moedas"],
+      ["perfilrpg", "Perfil completo"],
+      ["ranking / rankrpg", "Top 10 / global"]
+    ]},
+    { "nome": "GANHAR MOEDAS", "emoji": "💼", "cmds": [
+      ["diario", "Recompensa 1x/24h 👑12h"],
+      ["trabalhar", "1x/h 👑30min"],
+      ["crime", "1x/2h 👑30min"],
+      ["missao", "Missão diária"]
+    ]},
+    { "nome": "INTERAÇÃO", "emoji": "🦹", "cmds": [
+      ["roubar @m", "Tentar roubar (40%)"],
+      ["apostar [v]", "Apostar 🎰"],
+      ["duelo @m", "Duelo 1v1"],
+      ["transferir @m [v]", "Transferir"],
+      ["gorjeta [v]", "Gorjeta (citar msg)"]
+    ]},
+    { "nome": "INVESTIMENTOS", "emoji": "📈", "cmds": [
+      ["investir [v]", "Retorno 6h (50-200%)"],
+      ["comprar [prop]", "Propriedade"],
+      ["propriedades / coletar", "Renda"]
+    ]},
+    { "nome": "LOJA & INVENTÁRIO", "emoji": "🛒", "cmds": [
+      ["loja / inventario", "Ver loja/itens"],
+      ["usar [item]", "Usar item"]
+    ]},
+    { "nome": "ADMIN RPG", "emoji": "⚙️", "cmds": [
+      ["rpgconfig on/off", "Toggle RPG"],
+      ["addmoedas / rmmoedas @m [v]", "Moedas"],
+      ["resetperfil @m", "Reset perfil"]
+    ]}
+  ],
+  "rodape": "👑 VIPs: +50% moedas · cooldowns menores"
+}

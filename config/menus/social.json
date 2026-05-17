@@ -1,0 +1,29 @@
+{
+  "_info": "Menu de Perfil Social, Badges e Títulos.",
+  "titulo": "PERFIL & BADGES",
+  "emoji": "🪪",
+  "secoes": [
+    { "nome": "PERFIL SOCIAL", "emoji": "👤", "cmds": [
+      ["bio [texto]", "Definir/ver a tua bio (máx. 150 chars)"],
+      ["bio apagar", "Apagar bio"],
+      ["aniversario DD/MM", "Registar data de aniversário"],
+      ["titulo [nome]", "Equipar um título que possuis"],
+      ["titulos", "Ver todos os títulos disponíveis"],
+      ["comprtitulo [nome]", "Comprar título com moedas"],
+      ["perfil", "Ver perfil completo (inclui bio, título e badges)"]
+    ]},
+    { "nome": "BADGES", "emoji": "🏅", "cmds": [
+      ["meubadges", "Ver as tuas badges + verificação manual"],
+      ["listabadges", "Ver todas as badges disponíveis"]
+    ]},
+    { "nome": "ADMINS — BADGES DE GRUPO", "emoji": "🏷️", "cmds": [
+      ["criarbadge [emoji] [nome] | [desc] | [gatilho] | [valor]", "Criar badge (mensagens/dias/nivel)"],
+      ["deletarbadge [nome]", "Apagar badge do grupo"]
+    ]},
+    { "nome": "DONO — TÍTULOS", "emoji": "👑", "cmds": [
+      ["criartitulo [emoji] [nome] | automatico | [badges]", "Título automático por badges"],
+      ["criartitulo [emoji] [nome] | compravel | [moedas]", "Título comprável"],
+      ["deletartitulo [nome]", "Apagar título"]
+    ]}
+  ]
+}

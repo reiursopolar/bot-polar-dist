@@ -1,0 +1,53 @@
+PASTA config/menus/ — MENUS PERSONALIZÁVEIS
+═══════════════════════════════════════════
+
+Cada ficheiro .json desta pasta define o conteúdo de um menu do bot.
+O bot recarrega os ficheiros automaticamente a cada 15 segundos —
+não precisas de reiniciar para as alterações terem efeito.
+
+FORMATO DE CADA FICHEIRO
+─────────────────────────
+{
+  "_info": "comentário (ignorado pelo bot)",
+  "titulo": "TÍTULO EM MAIÚSCULAS",
+  "emoji": "🎯",
+  "secoes": [
+    {
+      "nome": "NOME DA SECÇÃO",
+      "emoji": "🔒",
+      "cmds": [
+        ["comando arg", "descrição"],   ← prefixo adicionado automaticamente
+        {"raw": "_texto livre_"}        ← inserido tal e qual
+      ]
+    }
+  ],
+  "rodape": "texto de rodapé"          ← opcional
+}
+
+VARIÁVEIS DISPONÍVEIS EM QUALQUER CAMPO
+────────────────────────────────────────
+  {prefix}  →  prefixo do bot (ex: !)
+  {nome}    →  nome do bot
+  {p}       →  atalho para {prefix}
+  {n}       →  atalho para {nome}
+
+FICHEIROS DISPONÍVEIS
+──────────────────────
+  admin.json    →  !menuadmin
+  fun.json      →  !menufun
+  ia.json       →  !menuia
+  media.json    →  !menumedia
+  loja.json     →  !menuloja
+  sistemas.json →  !menusistemas
+  mundo.json    →  !menumundo
+  jogos.json    →  !menujogos
+  amor.json     →  !menuamor
+  rpg.json      →  !menurpg
+  dono.json     →  !menudono
+  social.json   →  !menusocial
+
+ATENÇÃO
+────────
+• Se um ficheiro tiver erro de JSON, o menu original (do código) é usado.
+• Não apagar as chaves "titulo" e "emoji" — são obrigatórias.
+• Para desativar temporariamente um override: renomeia o ficheiro (ex: admin.json.bak).

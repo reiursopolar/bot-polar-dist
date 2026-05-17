@@ -1,0 +1,68 @@
+{
+  "_info": "Menu de Jogos.",
+  "titulo": "JOGOS & DIVERSÃO",
+  "emoji": "🎯",
+  "secoes": [
+    { "nome": "QUIZ", "emoji": "🧠", "cmds": [
+      ["quizconfig on/off", "Toggle"],
+      ["quiz / quiz horario HH:MM", "Lançar/hora"],
+      ["quiz ranking / fc [resp]", "Ranking/responder"]
+    ]},
+    { "nome": "FORCA", "emoji": "🎭", "cmds": [
+      ["forcaconfig on/off", "Toggle"],
+      ["forca", "Iniciar/ver"],
+      ["letra [l] / tentativa [pal]", "Jogar"],
+      ["forca ranking", "Ranking"]
+    ]},
+    { "nome": "ADIVINHAS", "emoji": "🤔", "cmds": [
+      ["adivinhaconfig on/off", "Toggle"],
+      ["adivinha / adivinha horario", "Lançar/hora"],
+      ["adivinha ranking", "Ranking"]
+    ]},
+    { "nome": "BATALHA STICKER", "emoji": "🥊", "cmds": [
+      ["batalhaconfig on/off", "Toggle"],
+      ["batalha [min]", "Iniciar (admin)"],
+      ["votar [nº] / batalha ranking", "Votar"]
+    ]},
+    { "nome": "JOGO DA VELHA", "emoji": "❌⭕", "cmds": [
+      ["velhaconfig on/off", "Toggle"],
+      ["velha @j", "Desafiar"],
+      ["velha [1-9] / desistir", "Jogar"],
+      ["velha ranking", "Ranking"]
+    ]},
+    { "nome": "CONECTA 4", "emoji": "🔴🟡", "cmds": [
+      ["conectaconfig on/off", "Toggle"],
+      ["conecta @j", "Desafiar"],
+      ["conecta [1-7] / desistir", "Jogar"],
+      ["conecta ranking", "Ranking"]
+    ]},
+    { "nome": "AKINATOR", "emoji": "🧞", "cmds": [
+      ["akiconfig on/off", "Toggle"],
+      ["aki", "Iniciar"],
+      ["aki sim/não/talvez", "Responder"],
+      ["aki desistir", "Encerrar"]
+    ]},
+    { "nome": "NÚMERO SECRETO", "emoji": "🔢", "cmds": [
+      ["numeroconfig on/off", "Toggle"],
+      ["numero [max]", "Iniciar (admin)"],
+      ["numero [palpite]", "Tentar"],
+      ["numero ranking", "Ranking"]
+    ]},
+    { "nome": "EMOJI QUIZ", "emoji": "🎯", "cmds": [
+      ["emojiquizconfig on/off", "Toggle"],
+      ["emojiquiz", "Lançar (admin)"],
+      ["fc [resp] / emojiquiz ranking", "Jogar"]
+    ]},
+    { "nome": "CORRIDA DE CAVALOS", "emoji": "🏇", "cmds": [
+      ["corrida", "Iniciar + apostas"],
+      ["apostar [1-5] [valor]", "Apostar"]
+    ]},
+    { "nome": "MAIS JOGOS", "emoji": "🎲", "cmds": [
+      ["vd / verdade / desafio", "Verdade ou desafio"],
+      ["meme / curiosidade", "Conteúdo"],
+      ["roleplay [situação]", "História"],
+      ["medals / medals @m / all", "Medalhas"],
+      ["medalsconfig on/off", "Toggle medalhas"]
+    ]}
+  ]
+}

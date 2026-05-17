@@ -1,0 +1,21 @@
+{
+  "_info": "Menu de Amor e Relacionamentos.",
+  "titulo": "AMOR & RELACIONAMENTOS",
+  "emoji": "💕",
+  "secoes": [
+    { "nome": "NAMORO", "emoji": "💘", "cmds": [
+      ["paquerar @u|nº", "Pedir namoro"],
+      ["aceitar / recusar [@u|nº]", "Responder"],
+      ["terminar", "Terminar 💔"]
+    ]},
+    { "nome": "CASAMENTO", "emoji": "💍", "cmds": [
+      ["casar", "Propor ao parceiro"],
+      ["aceitar", "Aceitar proposta"],
+      ["divorciar", "Divórcio"]
+    ]},
+    { "nome": "VER CASAIS", "emoji": "💑", "cmds": [
+      ["casais", "Casais do grupo"],
+      ["rel / relacionamento [@u]", "Ver rel."]
+    ]}
+  ]
+}

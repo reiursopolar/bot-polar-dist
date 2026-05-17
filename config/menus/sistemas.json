@@ -1,0 +1,64 @@
+{
+  "_info": "Menu de Sistemas Avançados.",
+  "titulo": "SISTEMAS AVANÇADOS",
+  "emoji": "🚀",
+  "secoes": [
+    { "nome": "REPUTAÇÃO", "emoji": "⭐", "cmds": [
+      ["reputacao on/off", "Toggle"],
+      ["reputacao", "Ranking"],
+      ["rep @m", "Dar +1 (1x/dia)"]
+    ]},
+    { "nome": "TRIAL MODE", "emoji": "🔒", "cmds": [
+      ["trial on/off", "Toggle"],
+      ["trial dias [n]", "Dias de avaliação"],
+      ["aprovar @m / trials", "Aprovar/ver"]
+    ]},
+    { "nome": "AUTO-MOD & TAGS", "emoji": "🤖", "cmds": [
+      ["automod on/off", "IA modera msgs"],
+      ["tag on/off / tags", "Toggle/listar"],
+      ["tag [nome] (citar msg)", "Criar tag"],
+      ["ver / rmtag [nome]", "Ver/remover"]
+    ]},
+    { "nome": "AVISOS PROGRAMADOS", "emoji": "📢", "cmds": [
+      ["aviso on/off", "Toggle"],
+      ["aviso add [int] [msg]", "Criar aviso"],
+      ["aviso list / rm [id]", "Gerir"]
+    ]},
+    { "nome": "ARQUIVO DE LINKS", "emoji": "🔗", "cmds": [
+      ["links on/off / links", "Toggle/ver"],
+      ["links buscar [termo]", "Pesquisar"]
+    ]},
+    { "nome": "DESAFIOS & ATIVIDADE", "emoji": "🎯", "cmds": [
+      ["desafio on/off", "Toggle"],
+      ["desafio horario HH:MM", "Hora"],
+      ["desafio ranking", "Ranking"],
+      ["atividade on/off / atividade", "Toggle/ranking"]
+    ]},
+    { "nome": "RESUMO & TRADUTOR", "emoji": "📝", "cmds": [
+      ["resumo on/off", "Toggle"],
+      ["resumo", "Pedir agora (admin)"],
+      ["tradutor on/off", "Auto-traduzir PT"]
+    ]},
+    { "nome": "PALAVRA DO DIA", "emoji": "📖", "cmds": [
+      ["palavra on/off", "Toggle"],
+      ["palavra horario HH:MM", "Hora"],
+      ["adivinhar [resp]", "Responder"]
+    ]},
+    { "nome": "VERDADE OU MITO", "emoji": "🤔", "cmds": [
+      ["verdadeomito on/off", "Toggle"],
+      ["verdade / mito / torneio", "Jogar"]
+    ]},
+    { "nome": "OUTROS SISTEMAS", "emoji": "⚔️", "cmds": [
+      ["dividir [n]", "Dividir em equipas"],
+      ["captcha on/off", "Toggle captcha"],
+      ["captcha tempo [min]", "Tempo limite"],
+      ["captcha acao avisar|rm", "Ação captcha"],
+      ["faq on/off", "Toggle FAQ"],
+      ["faq add [p] | [r]", "Adicionar FAQ"],
+      ["faq lista / del [n]", "Gerir FAQ"],
+      ["xinga on/off", "Contador palavrões"],
+      ["xinga ranking [hoje|sem|mes]", "Ranking"]
+    ]}
+  ],
+  "rodape": "💡 {prefix}ajuda [sistema] para detalhes"
+}
