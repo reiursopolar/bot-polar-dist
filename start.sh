@@ -33,14 +33,22 @@ auto_atualizar() {
       echo -e "${YELLOW}  ↻  Remote corrigido para repo público.${NC}"
     fi
 
-    # Modo git: git pull do repo público
+    # Modo git: fetch + reset --hard (funciona mesmo com histórico força-empurrado)
+    # Não usar git pull — bot-polar-dist tem histórico diferente do bot-polar (force push)
     ANTES=$(git rev-parse HEAD 2>/dev/null)
-    git pull --quiet origin "$DIST_BRANCH" 2>/dev/null
-    DEPOIS=$(git rev-parse HEAD 2>/dev/null)
+    git fetch --quiet origin "$DIST_BRANCH" 2>/dev/null
+    DEPOIS=$(git rev-parse "origin/${DIST_BRANCH}" 2>/dev/null)
+
+    if [ -z "$DEPOIS" ]; then
+      echo -e "${RED}  ✗  Não foi possível contactar o GitHub (sem rede?).${NC}"
+      return 1
+    fi
+
     if [ "$ANTES" != "$DEPOIS" ]; then
+      git reset --hard "origin/${DIST_BRANCH}" 2>/dev/null || true
       echo -e "${GREEN}  ✓  Atualizado! (${ANTES:0:7} → ${DEPOIS:0:7})${NC}"
       echo -e "${CYAN}  📋 O que foi atualizado:${NC}"
-      git log --oneline "${ANTES}..${DEPOIS}" 2>/dev/null | while IFS= read -r linha; do
+      git log --oneline -10 2>/dev/null | while IFS= read -r linha; do
         echo -e "     ${CYAN}•${NC} ${linha}"
       done
       return 0   # houve atualização
