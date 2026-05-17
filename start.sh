@@ -23,10 +23,19 @@ DIST_BRANCH="main"
 auto_atualizar() {
   echo -e "${YELLOW}  ↻  A verificar atualizações...${NC}"
 
+  REPO_URL="https://github.com/${DIST_REPO}.git"
+
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    # Modo git: git pull
+    # Garantir que o remote aponta sempre para o repo PÚBLICO
+    REMOTE_ATUAL=$(git remote get-url origin 2>/dev/null || echo "")
+    if [ "$REMOTE_ATUAL" != "$REPO_URL" ]; then
+      git remote set-url origin "$REPO_URL" 2>/dev/null || true
+      echo -e "${YELLOW}  ↻  Remote corrigido para repo público.${NC}"
+    fi
+
+    # Modo git: git pull do repo público
     ANTES=$(git rev-parse HEAD 2>/dev/null)
-    git pull --quiet 2>/dev/null
+    git pull --quiet origin "$DIST_BRANCH" 2>/dev/null
     DEPOIS=$(git rev-parse HEAD 2>/dev/null)
     if [ "$ANTES" != "$DEPOIS" ]; then
       echo -e "${GREEN}  ✓  Atualizado! (${ANTES:0:7} → ${DEPOIS:0:7})${NC}"
