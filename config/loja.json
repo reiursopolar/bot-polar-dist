@@ -1,6 +1,5 @@
 {
   "aluguelAtivo": false,
-  "botAtivo": false,
   "planos": {
     "7dias": {
       "nome": "Plano Semanal",
@@ -38,7 +37,7 @@
   "bot": {
     "30dias": {
       "nome": "Bot 30 dias",
-      "preco": 39.9,
+      "preco": 25,
       "dias": 30
     },
     "90dias": {
