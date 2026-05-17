@@ -1,0 +1,42 @@
+# ── Dependências ─────────────────────────────────────────────────────
+node_modules/
+
+# ── Sessão WhatsApp (dados de autenticação — NUNCA commitar) ─────────
+session/
+
+# ── Base de dados ─────────────────────────────────────────────────────
+database/polar.db
+database/polar.db-shm
+database/polar.db-wal
+database/groups/
+database/lid_map.json
+database/ia_memoria.json
+database/comandos_custom.json
+database/media/
+
+# ── Configurações com segredos (API keys, tokens, números pessoais) ───
+# Edita os ficheiros *.example.json e copia para o nome correto no servidor
+config/bot.json
+config/ia.json
+config/apis.json
+config/grupos.json
+
+# ── Ficheiros legados (substituídos pela pasta config/) ───────────────
+config.json
+loja.json
+mensagens.json
+
+# ── Logs e temporários ────────────────────────────────────────────────
+*.log
+.env
+tmp/
+.tmp/
+
+# ── Imagens de fundo por grupo (geradas pelos admins, ficam no servidor)
+database/backgrounds/
+
+# ── Cache e ferramentas locais ────────────────────────────────────────
+.npm/
+.claude/
+*.db-shm
+*.db-wal

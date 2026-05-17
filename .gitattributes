@@ -1,0 +1,13 @@
+# Normaliza todas as quebras de linha para LF no repositório
+* text=auto eol=lf
+
+# Ficheiros binários — não converter
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.gif binary
+*.webp binary
+*.mp3 binary
+*.mp4 binary
+*.opus binary
+*.db binary
