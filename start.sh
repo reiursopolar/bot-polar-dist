@@ -81,7 +81,9 @@ auto_atualizar() {
           # Mostrar último commit via API (melhor esforço)
           COMMIT_INFO=$(curl -s --max-time 10 \
             "https://api.github.com/repos/${DIST_REPO}/commits/${DIST_BRANCH}" \
-            2>/dev/null | grep -o '"message":"[^"]*"' | head -1 | sed 's/"message":"//;s/"//')
+            2>/dev/null | python3 -c \
+            "import sys,json; d=json.load(sys.stdin); print(d['commit']['message'].split('\n')[0])" \
+            2>/dev/null)
           [ -n "$COMMIT_INFO" ] && echo -e "     ${CYAN}•${NC} ${COMMIT_INFO}"
           rm -rf "$TMP_ZIP" "$TMP_DIR"
           return 0
