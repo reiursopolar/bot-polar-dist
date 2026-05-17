@@ -21,6 +21,7 @@ config/ia.json
 config/apis.json
 config/grupos.json
 config/licenca-bind.json
+config/licenca-inst.json
 
 # ── Ficheiros legados (substituídos pela pasta config/) ───────────────
 config.json
