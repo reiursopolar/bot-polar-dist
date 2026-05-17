@@ -63,6 +63,8 @@ auto_atualizar() {
             --exclude='database/' \
             --exclude='node_modules/' \
             "$TMP_DIR/$EXTRACTED/" ./
+          # Forçar timestamp de package.json para agora para que verificar_deps detete a mudança
+          touch package.json 2>/dev/null || true
           echo -e "${GREEN}  ✓  Atualizado via download!${NC}"
           rm -rf "$TMP_ZIP" "$TMP_DIR"
           return 0
