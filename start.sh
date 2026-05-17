@@ -69,7 +69,12 @@ auto_atualizar() {
         EXTRACTED=$(ls "$TMP_DIR" | head -1)
         if [ -n "$EXTRACTED" ]; then
           rsync -a \
-            --exclude='config/' \
+            --exclude='config/bot.json' \
+            --exclude='config/ia.json' \
+            --exclude='config/apis.json' \
+            --exclude='config/grupos.json' \
+            --exclude='config/licenca-bind.json' \
+            --exclude='config/licenca-inst.json' \
             --exclude='session/' \
             --exclude='auth_info_baileys/' \
             --exclude='database/' \
