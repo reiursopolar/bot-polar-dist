@@ -1,5 +1,5 @@
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃  💕 *AMOR & RELACIONAMENTOS*
+┃  💕 *AMOR & FAMÍLIA*
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
 *💘 NAMORO*
@@ -18,3 +18,15 @@
 ────────────────────────
   › {p}casais → Casais do grupo
   › {p}rel / relacionamento [@u] → Ver rel.
+
+*👨‍👩‍👧‍👦 FAMÍLIA*
+────────────────────────
+  › {p}adotar @u → Pedir adoção de alguém
+  › {p}desadotar @u → Remover filho/a
+  › {p}irmaos @u → Pedir irmandade
+  › {p}desirmanar @u → Deixar de ser irmãos
+  › {p}aceitar / recusar → Aceitar/recusar pedido
+  › {p}familia [@u] → Ver família completa
+  › {p}arvore [@u] → Árvore genealógica
+
+_Limite: 5 filhos · 10 irmãos por grupo_
