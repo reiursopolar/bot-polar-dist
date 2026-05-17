@@ -1,0 +1,107 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  🛡️ *ADMINISTRAÇÃO*
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+*🔒 GRUPO*
+────────────────────────
+  › {p}fechar / abrir → Abrir/fechar grupo
+  › {p}link → Link de convite
+  › {p}antilink on/off → Bloquear links
+  › {p}regras [txt] → Definir regras
+  › {p}infogrupo → Info do grupo
+
+*👥 MEMBROS*
+────────────────────────
+  › {p}ban / kick @u → Banir/remover
+  › {p}add [nº] → Adicionar membro
+  › {p}promover / rebaixar @u → Gerir admins
+  › {p}blacklist add @u [mot] → Lista negra
+  › {p}blacklist rm @u → Remover lista negra
+  › {p}blacklist list → Ver lista negra
+
+*📢 MENSAGENS*
+────────────────────────
+  › {p}tagall / adms / totag [txt] → Mencionar
+  › {p}apagar → Apagar msg citada
+  › {p}limpar [n] → Apagar últimas n
+
+*👋 BEM-VINDO & SAÍDA*
+────────────────────────
+  › {p}bemvindo on/off → Toggle entrada
+  › {p}fundobv [img] / off → Fundo entrada
+  › {p}legendabv [txt] → Msg entrada
+  › {p}previewbv → Pré-visualizar
+  › {p}saida on/off → Toggle saída
+  › {p}fundosaida / legendasaida → Config saída
+
+*⚠️ ADVERTÊNCIAS*
+────────────────────────
+  › {p}adv @u [mot] → Advertir
+  › {p}rmadv @u [all] → Remover aviso
+  › {p}maxadv [1-10] → Limite até ban
+
+*🔇 SILÊNCIO*
+────────────────────────
+  › {p}mute @u <t> / desmute @u → Silenciar
+  › {p}slowmode <t>/off → Modo lento
+  › {p}antiflood on [lim] [jan] → Anti-flood
+  › {p}logs [n] → Últimas ações
+  › {p}iaadmin on/off → IA só admins
+
+*🤬 ANTI-PALAVRÃO*
+────────────────────────
+  › {p}antipalavrao on/off → Toggle
+  › {p}addpalavrao / rmpalavrao → Gerir lista
+  › {p}palavroes / carregarpadrao → Ver/padrão
+
+*👻 ANTI-GHOST*
+────────────────────────
+  › {p}antighost → Estado/ajuda
+  › {p}antighost on [dias] [ban] → Ativar
+  › {p}antighost off / listar → Desativar/ver
+
+*🎴 ANTI-STICKER & AUTO*
+────────────────────────
+  › {p}antisticker on [lim] [jan] → Ativar
+  › {p}antisticker off / status → Desativar/ver
+  › {p}antisticker modo block|spam → Modo
+  › {p}antisticker adv|kick|ban → Punição
+  › {p}autosticker on/off → Auto-converter imgs
+
+*⏰ AGENDAMENTO*
+────────────────────────
+  › {p}abrirgp / fechargp HH:MM → Agendar
+  › {p}abrirgp foto/texto/ver/off → Config abertura
+  › {p}fechargp foto/texto/ver/off → Config fecho
+  › {p}agendagp → Ver agenda
+
+*🏆 MARCOS*
+────────────────────────
+  › {p}marcos on/off / reset → Toggle/reset
+  › {p}marcos add 100 500 1000 → Definir marcos
+  › {p}marcos mensagem [txt] → Msg personalizada
+
+*🕵️ X9 — VIGILÂNCIA*
+────────────────────────
+  › {p}x9 on/off → Toggle
+  › {p}x9 rebaixamento/remocao on/off → Config
+  › {p}x9 promocao/saida/config on/off → Config
+
+*🤝 PARCERIAS*
+────────────────────────
+  › {p}parceria on/off / parceiros → Toggle/listar
+  › {p}addparceiro / rmparceiro @u → Gerir
+
+*🎁 SORTEIOS*
+────────────────────────
+  › {p}criarsorteio / sorteios → Criar/listar
+  › {p}encerrarsorteio / cancelarsorteio → Gerir
+  › {p}participantes / reroll [id] → Ver/novo
+
+*🔑 MODO BOT*
+────────────────────────
+  › {p}modobot admin / todos → Modo
+  › {p}liberar / restringir <cmd> → Permissões
+  › {p}liberados → Ver liberados
+
+_Vars: {numero} {grupo} {membros} {hora}_

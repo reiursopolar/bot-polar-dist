@@ -1,0 +1,20 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  💕 *AMOR & RELACIONAMENTOS*
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+*💘 NAMORO*
+────────────────────────
+  › {p}paquerar @u|nº → Pedir namoro
+  › {p}aceitar / recusar [@u|nº] → Responder
+  › {p}terminar → Terminar 💔
+
+*💍 CASAMENTO*
+────────────────────────
+  › {p}casar → Propor ao parceiro
+  › {p}aceitar → Aceitar proposta
+  › {p}divorciar → Divórcio
+
+*💑 VER CASAIS*
+────────────────────────
+  › {p}casais → Casais do grupo
+  › {p}rel / relacionamento [@u] → Ver rel.

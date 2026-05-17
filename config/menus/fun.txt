@@ -1,0 +1,47 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  🎮 *BRINCADEIRAS*
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+*🎲 SORTE & ACASO*
+────────────────────────
+  › {p}dado / moeda / rolar [max] → Sortear
+  › {p}escolher [op1/op2] → Bot decide
+
+*😂 HUMOR*
+────────────────────────
+  › {p}piada / frase / motivacao → Texto
+  › {p}elogio / fato / fofoca → Mais
+  › {p}sorte / azar → Sorte do dia
+
+*💕 SOCIAL*
+────────────────────────
+  › {p}shippar @u1 @u2 → Compatibilidade
+  › {p}casamento / divorcio @u → Proposta
+  › {p}sortear / aniversario [@u] → Sortear
+  › {p}pp / perfil [@u] → Foto/perfil
+
+*🦸 ROLEPLAY*
+────────────────────────
+  › {p}superpoder / profissao [@u] → Poder
+  › {p}processo / julgamento [@u] → Julgar
+  › {p}insulto [@u] → Insulto criativo
+
+*🔮 MISTICISMO*
+────────────────────────
+  › {p}horoscopo [signo] → Horóscopo
+  › {p}numerologia [n] → Numerologia
+  › {p}personalidade / missaofun → Aleatório
+
+*🎭 AÇÕES COM GIF*
+────────────────────────
+  › {p}abraçar / beijar / cafune @u → Carinho
+  › {p}tapa / cutucar / morder @u → Briga
+  › {p}socar / aconchegar / acenar @u → Social
+  › {p}piscar / chorar / rir [@u] → Emoções
+  › {p}envergonhar / nomnom [@u] → Mais
+  › {p}baka / sim / nao → Reações
+
+*🎱 OUTROS*
+────────────────────────
+  › {p}8ball [pergunta] → Bola mágica
+  › {p}verdade / desafio / curiosidade → Mais

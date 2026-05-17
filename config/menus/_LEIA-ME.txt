@@ -1,53 +1,53 @@
-PASTA config/menus/ — MENUS PERSONALIZÁVEIS
-═══════════════════════════════════════════
+════════════════════════════════════════════════
+  POLAR BOT — Menus personalizáveis
+════════════════════════════════════════════════
 
-Cada ficheiro .json desta pasta define o conteúdo de um menu do bot.
-O bot recarrega os ficheiros automaticamente a cada 15 segundos —
-não precisas de reiniciar para as alterações terem efeito.
-
-FORMATO DE CADA FICHEIRO
-─────────────────────────
-{
-  "_info": "comentário (ignorado pelo bot)",
-  "titulo": "TÍTULO EM MAIÚSCULAS",
-  "emoji": "🎯",
-  "secoes": [
-    {
-      "nome": "NOME DA SECÇÃO",
-      "emoji": "🔒",
-      "cmds": [
-        ["comando arg", "descrição"],   ← prefixo adicionado automaticamente
-        {"raw": "_texto livre_"}        ← inserido tal e qual
-      ]
-    }
-  ],
-  "rodape": "texto de rodapé"          ← opcional
-}
-
-VARIÁVEIS DISPONÍVEIS EM QUALQUER CAMPO
-────────────────────────────────────────
-  {prefix}  →  prefixo do bot (ex: !)
-  {nome}    →  nome do bot
-  {p}       →  atalho para {prefix}
-  {n}       →  atalho para {nome}
+Cada ficheiro .txt desta pasta é o menu que o
+bot envia. O que escreves é exactamente o que
+aparece no WhatsApp — texto simples e directo.
 
 FICHEIROS DISPONÍVEIS
 ──────────────────────
-  admin.json    →  !menuadmin
-  fun.json      →  !menufun
-  ia.json       →  !menuia
-  media.json    →  !menumedia
-  loja.json     →  !menuloja
-  sistemas.json →  !menusistemas
-  mundo.json    →  !menumundo
-  jogos.json    →  !menujogos
-  amor.json     →  !menuamor
-  rpg.json      →  !menurpg
-  dono.json     →  !menudono
-  social.json   →  !menusocial
+  admin.txt    → !menuadmin
+  fun.txt      → !menufun
+  ia.txt       → !menuia
+  media.txt    → !menumedia
+  loja.txt     → !menuloja
+  sistemas.txt → !menusistemas
+  mundo.txt    → !menumundo
+  jogos.txt    → !menujogos
+  amor.txt     → !menuamor
+  rpg.txt      → !menurpg
+  dono.txt     → !menudono
+  social.txt   → !menusocial
 
-ATENÇÃO
-────────
-• Se um ficheiro tiver erro de JSON, o menu original (do código) é usado.
-• Não apagar as chaves "titulo" e "emoji" — são obrigatórias.
-• Para desativar temporariamente um override: renomeia o ficheiro (ex: admin.json.bak).
+────────────────────────────────────────────────
+VARIÁVEIS (substituídas automaticamente)
+────────────────────────────────────────────────
+  {p}  ou  {prefix}  →  prefixo do bot  (ex: !)
+  {n}  ou  {nome}    →  nome do bot     (ex: Polar)
+
+Exemplo de uso:
+  › {p}ping → Testar o bot
+  _Bot: {n}_
+
+────────────────────────────────────────────────
+COMO EDITAR
+────────────────────────────────────────────────
+1. Abre o ficheiro do menu que queres alterar
+2. Edita à tua vontade (texto livre)
+3. Guarda o ficheiro
+4. Em 15 segundos o bot já usa a nova versão
+   (sem precisar de reiniciar!)
+
+────────────────────────────────────────────────
+FALLBACK
+────────────────────────────────────────────────
+Se apagares um ficheiro ou o deixares vazio,
+o bot usa automaticamente o menu original que
+vem no código — nunca fica sem resposta.
+
+Para desativar temporariamente um override:
+renomeia o ficheiro (ex: admin.txt.bak)
+
+════════════════════════════════════════════════

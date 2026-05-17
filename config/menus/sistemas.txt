@@ -1,0 +1,71 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  🚀 *SISTEMAS AVANÇADOS*
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+*⭐ REPUTAÇÃO*
+────────────────────────
+  › {p}reputacao on/off → Toggle
+  › {p}reputacao → Ranking
+  › {p}rep @m → Dar +1 _(1x/dia)_
+
+*🔒 TRIAL MODE*
+────────────────────────
+  › {p}trial on/off → Toggle
+  › {p}trial dias [n] → Dias de avaliação
+  › {p}aprovar @m / trials → Aprovar/ver
+
+*🤖 AUTO-MOD & TAGS*
+────────────────────────
+  › {p}automod on/off → IA modera msgs
+  › {p}tag on/off / tags → Toggle/listar
+  › {p}tag [nome] _(citar msg)_ → Criar tag
+  › {p}ver / rmtag [nome] → Ver/remover
+
+*📢 AVISOS PROGRAMADOS*
+────────────────────────
+  › {p}aviso on/off → Toggle
+  › {p}aviso add [int] [msg] → Criar aviso
+  › {p}aviso list / rm [id] → Gerir
+
+*🔗 ARQUIVO DE LINKS*
+────────────────────────
+  › {p}links on/off / links → Toggle/ver
+  › {p}links buscar [termo] → Pesquisar
+
+*🎯 DESAFIOS & ATIVIDADE*
+────────────────────────
+  › {p}desafio on/off → Toggle
+  › {p}desafio horario HH:MM → Hora
+  › {p}desafio ranking → Ranking
+  › {p}atividade on/off / atividade → Toggle/ranking
+
+*📝 RESUMO & TRADUTOR*
+────────────────────────
+  › {p}resumo on/off → Toggle
+  › {p}resumo → Pedir agora _(admin)_
+  › {p}tradutor on/off → Auto-traduzir PT
+
+*📖 PALAVRA DO DIA*
+────────────────────────
+  › {p}palavra on/off → Toggle
+  › {p}palavra horario HH:MM → Hora
+  › {p}adivinhar [resp] → Responder
+
+*🤔 VERDADE OU MITO*
+────────────────────────
+  › {p}verdadeomito on/off → Toggle
+  › {p}verdade / mito / torneio → Jogar
+
+*⚔️ OUTROS SISTEMAS*
+────────────────────────
+  › {p}dividir [n] → Dividir em equipas
+  › {p}captcha on/off → Toggle captcha
+  › {p}captcha tempo [min] → Tempo limite
+  › {p}captcha acao avisar|rm → Ação captcha
+  › {p}faq on/off → Toggle FAQ
+  › {p}faq add [p] | [r] → Adicionar FAQ
+  › {p}faq lista / del [n] → Gerir FAQ
+  › {p}xinga on/off → Contador palavrões
+  › {p}xinga ranking [hoje|sem|mes] → Ranking
+
+_💡 {p}ajuda [sistema] para detalhes_

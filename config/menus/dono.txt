@@ -1,0 +1,62 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  👑 *PAINEL DO DONO*
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+*🔑 LICENÇA*
+────────────────────────
+  › {p}licenca → Ver estado da licença
+  › {p}licenca ativar POLAR-... → Ativar nova chave
+
+*🤖 BOT*
+────────────────────────
+  › {p}setnome / setprefix → Nome/prefixo
+  › {p}setfoto / setstatus [txt] → Foto/status
+  › {p}reiniciar → Reiniciar bot
+  › {p}setmenufoto / removerfoto → Foto menus
+  › {p}autolimpar on/off/agora → Limpar dados grupos inativos
+
+*📊 ESTATÍSTICAS*
+────────────────────────
+  › {p}stats → Estatísticas globais
+  › {p}apiusage / clearcache → IA
+  › {p}backup / restore → Backup config
+
+*🔒 PROTEÇÃO GLOBAL*
+────────────────────────
+  › {p}bloquear / desbloquear @u|nº → Block
+  › {p}bloqueados → Ver bloqueados
+  › {p}globalban add/rm/list [n] → Ban global
+
+*📢 COMUNICAÇÃO*
+────────────────────────
+  › {p}grupos → Grupos ativos
+  › {p}broadcast [txt] → Enviar para todos
+  › {p}anuncio [msg] / confirmar → Anúncio
+
+*🏪 LOJA & VIP*
+────────────────────────
+  › {p}aluguel on/off → Ativar/desativar aluguel
+  › {p}alugueis / vips → Listar alugados/VIPs
+  › {p}pendentes → Grupos sem aluguel ativo
+  › {p}receita [anterior|YYYY-MM] → Receita mensal
+  › {p}join [link] → Entrar num grupo via convite
+  › {p}sair [link] → Sair de um grupo via link
+  › {p}addaluguel [plano|dias] → Ativar aluguel
+  › {p}alugarmanual [link|id] [plano] → Entrar + ativar
+  › {p}vipmanual @u [plano] → Dar VIP manual
+  › {p}cancelaraluguel [id] → Cancelar aluguel + sair
+  › {p}addvip @u [plano] [d] → Dar VIP
+  › {p}delvip @u → Remover VIP
+
+*🧩 CMDS PERSONALIZADOS*
+────────────────────────
+  › {p}ajudacmd → Guia completo de sintaxe
+  › {p}addcmd nome | resposta | opções → Criar
+  › {p}editcmd nome | nova resp | opções → Editar
+  › {p}rmcmd nome / listacmds → Remover/listar
+
+*👥 SUB-DONOS*
+────────────────────────
+  › {p}addsubdono @u|nº → Adicionar sub-dono
+  › {p}delsubdono @u|nº → Remover sub-dono
+  › {p}subdonos → Listar sub-donos ativos

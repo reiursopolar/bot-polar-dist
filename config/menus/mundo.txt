@@ -1,0 +1,38 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  🌍 *MUNDO REAL*
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+*🌤️ METEOROLOGIA*
+────────────────────────
+  › {p}tempo [cidade] → Clima ao vivo
+
+*💱 CÂMBIO & CRIPTO*
+────────────────────────
+  › {p}cambio [moeda] → Cotação em BRL
+  _dolar · euro · libra · iene · yuan_
+  › {p}cripto [moeda] → Preço + var. 24h
+  _bitcoin · eth · sol · bnb · doge_
+
+*📰 NOTÍCIAS*
+────────────────────────
+  › {p}noticias → Últimas do Brasil
+  › {p}noticias [tema] → Filtrar por tema
+
+*⚽ FUTEBOL*
+────────────────────────
+  › {p}futebol jogos [liga] → Próximos jogos
+  › {p}futebol tabela [liga] → Classificação
+  › {p}futebol resultados [liga] → Resultados
+  _brasileirao · champions · premier_
+
+*🏢 CONSULTAS*
+────────────────────────
+  › {p}cnpj [nº] → Dados empresa
+  › {p}cep [nº] → Endereço
+  › {p}ip [endereço] → Info do IP
+
+*🎬 ENTRETENIMENTO*
+────────────────────────
+  › {p}filme [nome] → Info filme
+  › {p}anime [nome] → Info anime
+  › {p}letra artista - música → Letra
