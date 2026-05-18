@@ -23,6 +23,10 @@ config/grupos.json
 config/licenca-bind.json
 config/licenca-inst.json
 
+# ── Configurações da loja (planos, toggles — personalizadas pelo dono) ─
+# Nunca sobrescrever no update — o dono configura via comandos no bot
+config/loja.json
+
 # ── Ficheiros legados (substituídos pela pasta config/) ───────────────
 /config.json
 /loja.json
