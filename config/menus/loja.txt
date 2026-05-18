@@ -1,0 +1,33 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  🏪 *LOJA*
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+*📦 ALUGUEL DE GRUPO*
+────────────────────────
+  › {p}alugar → Ver planos disponíveis
+  › {p}alugar [plano] → Comprar plano _(privado)_
+  › {p}renovar → Renovar plano atual
+  › {p}renovar [plano] → Renovar com plano específico
+  › {p}meuplano → Os teus grupos + progresso
+  › {p}botplano → Estado do plano no grupo
+  › {p}gratis → Teste gratuito de 1 dia — envia o link do grupo! _(1x por pessoa)_
+
+*👑 VIP — IA NO PRIVADO*
+────────────────────────
+  › {p}vip → Ver planos VIP
+  › {p}vip [plano] → Comprar VIP _(privado)_
+  › {p}meuvip → Ver o teu VIP ativo
+  › {p}menuvip → Todos os comandos VIP
+
+*🤖 ADQUIRIR O BOT*
+────────────────────────
+  › {p}comprarbot → Ver planos + preços do arquivo do bot
+  › {p}comprarbot [plano] → Comprar o arquivo do bot _(privado)_
+
+*💜 APOIAR*
+────────────────────────
+  › {p}apoiar → Ver opções de donativo
+  › {p}apoiar [valor] → Donativo via PIX
+
+_💳 Pagamento automático via PIX · usar no privado_
+_🔄 Renovação acumula tempo — nunca perdes dias!_
