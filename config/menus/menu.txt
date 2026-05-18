@@ -1,0 +1,16 @@
+*📂 CATEGORIAS*
+  🛡️ `{p}menuadmin` → Moderação
+  🚀 `{p}menusistemas` → Sistemas
+  🎮 `{p}menufun` → Diversão
+  💕 `{p}menuamor` → Amor & casais
+  🎯 `{p}menujogos` → Jogos
+  ⚔️ `{p}menurpg` → Economia/RPG
+  🤖 `{p}menuia` → IA
+  📥 `{p}menumedia` → Downloads
+  🌍 `{p}menumundo` → Mundo real
+  🏪 `{p}menuloja` → Loja
+  👑 `{p}menuvip` → VIP
+  🪪 `{p}menusocial` → Perfil & Badges
+────────────────────────
+ℹ️ `{p}info`  🏓 `{p}ping`  👤 `{p}dono`
+_prefixo: *{p}*_
