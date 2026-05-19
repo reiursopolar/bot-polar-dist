@@ -1,0 +1,11 @@
+{
+  "_info": "Mensagens do sistema de bem-vindo.\n  Variáveis: {saudacao} {numero} {grupo} {membros} {legenda}",
+  "bemvindo": {
+    "legendaPadrao": "👋 {saudacao} @{numero}, bem-vindo(a) ao *{grupo}*!\nAgora somos *{membros}* membros 🎉",
+    "ativado": "✅ *Bem-vindo ativado!*",
+    "desativado": "❌ *Bem-vindo desativado.*",
+    "fundoGuardado": "✅ *Fundo do bem-vindo guardado!*\n_Use !fundobv off para voltar à foto de perfil._",
+    "fundoRemovido": "📸 Bem-vindo voltou ao modo *foto de perfil*.",
+    "legendaAtualizada": "✅ *Legenda do bem-vindo atualizada!*\n\n_{legenda}_"
+  }
+}

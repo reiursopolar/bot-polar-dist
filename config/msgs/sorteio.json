@@ -1,0 +1,11 @@
+{
+  "_info": "Mensagens do sistema de sorteio (!sorteio, !entrar, !vencedor).\n  Variáveis: {numero} {premio}",
+  "sorteio": {
+    "entrou": "{emoji} @{numero} entrou no sorteio *#{id}*!\n👥 Total de participantes: *{total}*",
+    "saiu": "❌ @{numero} saiu do sorteio *#{id}*.\n👥 Total de participantes: *{total}*",
+    "semParticipantes": "🎁 *Sorteio #{id} encerrado*\n\n🏆 Prémio: *{premio}*\n\n❌ _Nenhum participante reagiu. Sorteio sem vencedor._",
+    "resultado": "🎊 *SORTEIO ENCERRADO!* 🎊\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\n🏆 *Prémio:* {premio}\n👥 *Participantes:* {total}\n\n*🎉 Vencedor{plural}:*\n{vencedores}\n\n_Parabéns! Entra em contacto com o admin para receber o prémio._\n━━━━━━━━━━━━━━━━━━━━━━━━━\n_Use !reroll {id} se o vencedor não responder_",
+    "reroll": "🔄 *REROLL — NOVO VENCEDOR!* 🔄\n━━━━━━━━━━━━━━━━━━━━━━━━━\n\n🏆 *Prémio:* {premio}\n👥 *Participantes:* {total}\n\n*🎉 Novo Vencedor:*\n{vencedores}\n\n_Parabéns!_",
+    "cancelado": "🗑️ Sorteio *#{id}* cancelado."
+  }
+}

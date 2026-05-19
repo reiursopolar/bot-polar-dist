@@ -1,0 +1,27 @@
+{
+  "_info": "Mensagens dos comandos de consulta (!tempo, !cambio, !noticias, etc).\n  Variáveis: {cidade} {moeda} {erro}",
+  "mundo": {
+    "tempoSemCidade": "❓ Ex: *{prefix}tempo São Paulo*",
+    "tempoErro": "❌ Não consegui obter o tempo de \"*{cidade}*\".\n_{erro}_",
+    "cambioSemMoeda": "❓ Ex: *{prefix}cambio dolar*\n\nMoedas: dolar, euro, libra, bitcoin, ethereum, yuan, iene, franco, peso, canadense, australiano",
+    "cambioErro": "❌ Moeda não encontrada: *{moeda}*.\n_Tenta: dolar, euro, libra, bitcoin, ethereum, iene_",
+    "criptoSemCoin": "❓ Ex: *{prefix}cripto bitcoin*\n\nDisponíveis: bitcoin, ethereum, solana, bnb, cardano, xrp, dogecoin, litecoin",
+    "criptoErro": "❌ Cripto não encontrada: *{coin}*.\n_{erro}_",
+    "noticiasErro": "❌ Erro ao buscar notícias.\n_{erro}_",
+    "futebolUso": "❓ Uso: *{prefix}futebol [tabela|resultados|jogos] [liga]*\n\nLigas: *brasileirao, champions, premier, laliga, bundesliga, italiana, francesa, libertadores, sulamericana*",
+    "futebolErro": "❌ Erro ao buscar dados de futebol.\n_{erro}_",
+    "cnpjSemValor": "❓ Ex: *{prefix}cnpj 00.000.000/0000-00*",
+    "cnpjErro": "❌ CNPJ não encontrado.\n_{erro}_",
+    "cepSemValor": "❓ Ex: *{prefix}cep 01310100*",
+    "cepErro": "❌ {erro}",
+    "ipErro": "❌ Não foi possível obter informações do IP.\n_{erro}_",
+    "filmeSemNome": "🎬 Ex: *{prefix}filme Matrix*",
+    "filmeSemChave": "⚙️ Para usar *{prefix}filme*, adiciona a tua chave TMDB em *config.json*:\n_\"tmdbApiKey\": \"Bearer xxx\"_\n\nCria a chave gratuita em: https://www.themoviedb.org/settings/api",
+    "filmeErro": "❌ {erro}",
+    "animeSemNome": "🎌 Ex: *{prefix}anime Naruto*",
+    "animeErro": "❌ {erro}",
+    "letraSemQuery": "🎵 Ex: *{prefix}letra Eminem - Lose Yourself*\n_Formato: artista - música_",
+    "letraFormatoErro": "🎵 Usa o formato: *{prefix}letra artista - música*\n\nEx: *{prefix}letra Ed Sheeran - Shape of You*",
+    "letraErro": "❌ {erro}"
+  }
+}

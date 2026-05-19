@@ -1,0 +1,14 @@
+{
+  "_info": "Mensagens do modo restrito do bot (apenas admins usam comandos).\n  Variáveis: {prefixo}",
+  "modobot": {
+    "ativado": "🔒 Modo admin ativado. Membros não podem usar comandos.",
+    "desativado": "🔓 Modo aberto. Todos os membros podem usar comandos.",
+    "liberado": "✅ Comando *{cmd}* liberado para membros.",
+    "restringido": "🚫 Comando *{cmd}* restringido a admins.",
+    "jaNaLista": "⚠️ Este comando já está na lista.",
+    "naoNaLista": "⚠️ Este comando não está na lista.",
+    "liberados": "📋 Comandos liberados para membros:\n{lista}",
+    "semLiberados": "📋 Nenhum comando liberado para membros.",
+    "usoModobot": "ℹ️ Uso: !modobot admin | !modobot todos"
+  }
+}

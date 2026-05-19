@@ -1,0 +1,28 @@
+{
+  "_info": "Mensagens do sistema de captcha anti-fake.\n  Variáveis: {tentativas} {tempo}",
+  "captcha": {
+    "apenasAdmin": "🚫 Apenas admins podem configurar o CAPTCHA.",
+    "status": "🔐 *CAPTCHA*\n\nEstado: {estadoLabel}\n⏱️ Tempo: *{tempo_min} min*\n❌ Tentativas: *{tentativas}*\n⚠️ Ação ao falhar: *{acao}*\n\n_Subcomandos: on | off | tempo [min] | acao [avisar|remover] | tentativas [n] | liberar @user_",
+    "ativado": "🔐 CAPTCHA ativado ✅",
+    "desativado": "🔐 CAPTCHA desativado ❌",
+    "tempoInvalido": "❌ Tempo inválido (1-60 minutos).",
+    "tempoAtualizado": "⏱️ Tempo do CAPTCHA: *{min} minutos*",
+    "acaoInvalida": "❌ Ação inválida: avisar | remover",
+    "acaoAtualizada": "⚠️ Ação ao falhar: *{acao}*",
+    "tentativasInvalidas": "❌ Valor inválido (1-10).",
+    "tentativasAtualizadas": "❌ Tentativas do CAPTCHA: *{n}*",
+    "liberarSemMencao": "❌ Menciona o utilizador com @.",
+    "liberados": "✅ {count} utilizador(es) liberado(s) do CAPTCHA.",
+    "subcomandos": "❓ Subcomandos: *on* | *off* | *tempo [min]* | *acao [avisar|remover]* | *tentativas [n]* | *liberar @user*",
+    "verificacao": "🔐 *Verificação CAPTCHA*\n\nOlá @{userNum}! Para poderes participar no grupo, responde à pergunta abaixo em *{tempo_min} minutos*.\n\n📩 *{pergunta}*\n\n_Responde aqui no grupo com apenas o número. As tuas mensagens serão apagadas até passares._",
+    "alertaAdmin": "🔐 *CAPTCHA — Alerta de Admin*\n\n@{userNum} não passou na verificação ({motivo}).\nAs mensagens desta pessoa estão a ser apagadas.\n\n👮 Admins, por favor verifiquem:\n{adminMentions}",
+    "lembreteMedia": "🔐 @{userNum}, responde com o *número* da conta:\n\n📩 {pergunta}",
+    "lembreteTexto": "🔐 @{userNum}, responde apenas com o *número*:\n\n📩 {pergunta}",
+    "sucesso": "✅ @{userNum} passou na verificação! Bem-vindo(a) ao grupo 🎉",
+    "errado": "❌ @{userNum} Resposta errada! Tens *{restantes}* tentativa(s).\n\n📩 {pergunta}",
+    "removidoTentativas": "🚫 @{userNum} foi removido por não passar no CAPTCHA ({motivo}).",
+    "removidoTempo": "🚫 @{userNum} foi removido por não responder ao CAPTCHA a tempo.",
+    "lembrete": "⚠️ @{userNum}, ainda precisas de passar na verificação CAPTCHA!\n\n📩 *{pergunta}*\n\n_Responde com o número. Caso não respondas a tempo, serás advertido pelos admins._",
+    "lembreteRemover": "⚠️ @{userNum}, ainda precisas de passar na verificação CAPTCHA!\n\n📩 *{pergunta}*\n\n_Responde com o número. Caso não respondas a tempo, serás removido do grupo._"
+  }
+}

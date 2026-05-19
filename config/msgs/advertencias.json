@@ -1,0 +1,21 @@
+{
+  "_info": "Mensagens de advertências/avisos.\n  Variáveis: {num} {motivo} {data} {hora} {total} {max} {restam} {filled} {empty} {cor}",
+  "warnings": {
+    "cardAviso": "⚠️ *ADVERTÊNCIA* ⚠️\n━━━━━━━━━━━━━━━━━━━━━\n\n👤 *Utilizador:* @{num}\n📋 *Motivo:* {motivo}\n📅 *Data:* {data} às {hora}\n\n{cor} *Avisos:* [{filled}{empty}] *{total}/{max}*\n\n",
+    "cardAvisoRestam": "_⚠️ Atenção: mais {restam} aviso{s} resulta em banimento automático!_",
+    "cardAvisoLimite": "_🔨 Limite atingido — banimento a ser aplicado!_",
+    "cardBanimento": "🔨 *BANIMENTO AUTOMÁTICO* 🔨\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👤 *Utilizador:* @{num}\n📋 *Motivo:* 3 avisos acumulados\n📋 *Último motivo:* {motivo}\n📅 *Data:* {data} às {hora}\n\n_O utilizador foi removido do grupo por exceder o limite de advertências._",
+    "cardListaVazio": "📋 *ADVERTÊNCIAS — @{num}*\n━━━━━━━━━━━━━━━━━━━━━\n\n✅ Este utilizador não tem advertências.",
+    "cardListaCabecalho": "📋 *ADVERTÊNCIAS — @{num}*\n━━━━━━━━━━━━━━━━━━━━━\n\n",
+    "cardListaLimiteAtingido": "_⛔ Limite atingido!_",
+    "cardListaRestam": "_Mais {restam} aviso{s} resulta em banimento._"
+  },
+  "advertencias": {
+    "aviso": "⚠️ *ADVERTÊNCIA #{total}*\n━━━━━━━━━━━━━━━━━━━━━\n\n@{numero} recebeu um aviso.\n📋 Motivo: {motivo}\n📊 Avisos: *{total}/{max}*",
+    "banimento": "🚫 *BANIMENTO AUTOMÁTICO*\n━━━━━━━━━━━━━━━━━━━━━\n\n@{numero} atingiu o limite de *{max}* avisos.\n📋 Motivo: {motivo}\n_Banido automaticamente._",
+    "limpos": "✅ Todas as advertências de @{numero} removidas.",
+    "ultimoRmv": "✅ Último aviso de @{numero} removido.",
+    "semAvisos": "❌ @{numero} não tem advertências.",
+    "maxDefinido": "✅ Máximo definido para *{n}* aviso{plural}.\nAo atingir {n}, o membro é banido automaticamente."
+  }
+}

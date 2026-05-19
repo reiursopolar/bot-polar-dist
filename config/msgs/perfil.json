@@ -1,0 +1,15 @@
+{
+  "_info": "Mensagens do sistema de perfil personalizado.\n  Variáveis: {prefixo} {categoria}",
+  "perfil": {
+    "addUso": "❌ Uso: *!perfil add [emoji] [nome]*\nEx: !perfil add 🐔 Nível de frango",
+    "limiteAtingido": "❌ Limite de 10 categorias por grupo atingido.",
+    "catAdicionada": "✅ Categoria *{emoji} {nome}* adicionada!",
+    "rmUso": "❌ Uso: *!perfil rm [nome]*",
+    "catRemovida": "🗑️ Categoria *{nome}* removida.",
+    "catNaoEncontrada": "❌ Categoria *{nome}* não encontrada.",
+    "apenasGrupos": "❌ Este comando só funciona em grupos.",
+    "listVazia": "📋 Nenhuma categoria personalizada neste grupo.\n_Admins podem usar !perfil add 🔥 Nome_",
+    "listCabecalho": "📋 *Categorias personalizadas:*\n\n{linhas}",
+    "semFoto": "🖼️ _[sem foto de perfil]_\n\n{texto}"
+  }
+}

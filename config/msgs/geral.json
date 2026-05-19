@@ -1,5 +1,5 @@
 {
-  "_info": "Mensagens gerais do bot: permissões, grupo, bem-vindo, saída, handler e agendamentos.",
+  "_info": "Mensagens gerais de permissões e estado do grupo.\n  Variáveis: {prefixo} {comando} {nomeBot} {numero}",
   "geral": {
     "apenasAdmin": "🚫 Apenas admins podem usar este comando.",
     "apenasDono": "🚫 Este comando é exclusivo para o dono do bot.",
@@ -14,77 +14,5 @@
     "fechado": "🔒 Grupo *fechado*! Só admins podem enviar mensagens.",
     "aberto": "🔓 Grupo *aberto*! Todos podem enviar mensagens.",
     "antiLink": "🚫 Links não são permitidos neste grupo! @{numero}"
-  },
-  "membros": {
-    "banido": "✅ @{numero} foi *banido* e adicionado à lista negra.",
-    "kickado": "✅ @{numero} foi *removido* do grupo.",
-    "adicionado": "✅ {numero} foi *adicionado* ao grupo!",
-    "promovido": "⬆️ @{numero} agora é *admin*!",
-    "rebaixado": "⬇️ @{numero} foi *removido dos admins*.",
-    "naoPosBanirAdmin": "⚠️ Não posso banir um admin.",
-    "naoAvertirAdmin": "⚠️ Não podes advertir um admin.",
-    "naoAvertirSelf": "⚠️ Não podes advertir-te a ti mesmo."
-  },
-  "bemvindo": {
-    "legendaPadrao": "👋 {saudacao} @{numero}, bem-vindo(a) ao *{grupo}*!\nAgora somos *{membros}* membros 🎉",
-    "ativado": "✅ *Bem-vindo ativado!*",
-    "desativado": "❌ *Bem-vindo desativado.*",
-    "fundoGuardado": "✅ *Fundo do bem-vindo guardado!*\n_Use !fundobv off para voltar à foto de perfil._",
-    "fundoRemovido": "📸 Bem-vindo voltou ao modo *foto de perfil*.",
-    "legendaAtualizada": "✅ *Legenda do bem-vindo atualizada!*\n\n_{legenda}_"
-  },
-  "saida": {
-    "legendaPadrao": "😢 @{numero} saiu do grupo...\nAgora somos *{membros}* membros.",
-    "ativada": "✅ *Saída ativada!*",
-    "desativada": "❌ *Saída desativada.*",
-    "fundoGuardado": "✅ *Fundo da saída guardado!*",
-    "fundoRemovido": "📸 Saída voltou ao modo *foto de perfil*.",
-    "legendaAtualizada": "✅ *Legenda de saída atualizada!*\n\n_{legenda}_"
-  },
-  "warnings": {
-    "cardAviso": "⚠️ *ADVERTÊNCIA* ⚠️\n━━━━━━━━━━━━━━━━━━━━━\n\n👤 *Utilizador:* @{num}\n📋 *Motivo:* {motivo}\n📅 *Data:* {data} às {hora}\n\n{cor} *Avisos:* [{filled}{empty}] *{total}/{max}*\n\n",
-    "cardAvisoRestam": "_⚠️ Atenção: mais {restam} aviso{s} resulta em banimento automático!_",
-    "cardAvisoLimite": "_🔨 Limite atingido — banimento a ser aplicado!_",
-    "cardBanimento": "🔨 *BANIMENTO AUTOMÁTICO* 🔨\n━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n👤 *Utilizador:* @{num}\n📋 *Motivo:* 3 avisos acumulados\n📋 *Último motivo:* {motivo}\n📅 *Data:* {data} às {hora}\n\n_O utilizador foi removido do grupo por exceder o limite de advertências._",
-    "cardListaVazio": "📋 *ADVERTÊNCIAS — @{num}*\n━━━━━━━━━━━━━━━━━━━━━\n\n✅ Este utilizador não tem advertências.",
-    "cardListaCabecalho": "📋 *ADVERTÊNCIAS — @{num}*\n━━━━━━━━━━━━━━━━━━━━━\n\n",
-    "cardListaLimiteAtingido": "_⛔ Limite atingido!_",
-    "cardListaRestam": "_Mais {restam} aviso{s} resulta em banimento._"
-  },
-  "scheduler": {
-    "iniciado": "⏰ Scheduler iniciado.",
-    "grupoAberto": "🔓 Grupo aberto automaticamente. Bom dia a todos!",
-    "grupoFechado": "🔒 Grupo fechado automaticamente. Até amanhã!"
-  },
-  "handler": {
-    "chatSemGrupo": "❌ Nenhum grupo principal configurado.",
-    "chatLink": "💬 *Entra no nosso grupo!*\n\n{link}\n\n_Partilha com quem quiseres entrar!_ 🎉",
-    "chatErro": "❌ Não consegui gerar o link.\n\n_Certifica-te de que o bot é administrador do grupo principal._",
-    "pingCalculando": "🏓 A calcular...",
-    "pingResposta": "🏓 *Pong!* ⚡ *{ms}ms*",
-    "infoTitulo": "*━━━━━━━━━━━━━━━━━━━━━━━━━━━━*\n    ℹ️  *{nomeBot}*\n*━━━━━━━━━━━━━━━━━━━━━━━━━━━━*\n\n🤖 Nome: *{nomeBot}*\n📱 Número: `{numero}`\n👑 Dono: `{numeroDono}`\n⚙️ Prefixo: *{prefixo}*\n🌍 Fuso: {fuso}\n🧠 IA: {ia}\n🛡️ Admin aqui: {admin}\n📦 Versão: 1.0.0 ESM\n\n_Usa `{prefixo}ajuda` para ver todos os sistemas._",
-    "donoTitulo": "👑 *Dono do {nomeBot}*\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n🧑 Nome: *{donoNome}*\n📱 Contato: wa.me/{donoNum}\n📟 Número: `+{donoNum}`\n\n🤖 Bot: *{nomeBot}*\n📦 Grupos ativos: *{grupos}*\n⚙️ Prefixo: *{prefixo}*\n\n_Para falar com o dono, manda mensagem para o número acima_ 👆",
-    "criadorTitulo": "🛠️ *Criador do {nomeBot}*\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n👨‍💻 Criado por: *{criadorNome}*\n📱 Contato: wa.me/{criadorNum}\n📟 Número: `+{criadorNum}`\n\n🤖 *Sobre o bot:*\n• Nome: *{nomeBot}*\n• Plataforma: *WhatsApp*\n• Linguagem: *Node.js (ESM)*\n• Prefixo: *{prefixo}*\n\n_Gostou do bot? Fala com o criador_ 💬",
-    "polarApenasAdmin": "🤖 Os comandos de IA estão disponíveis apenas para admins neste grupo.",
-    "polarSemTexto": "❓ Ex: *{prefixo}polar Qual é a capital de Portugal?*",
-    "polarErroIA": "❌ Sem resposta da IA. Tenta novamente.",
-    "polarErroContato": "❌ Erro ao contactar a IA. Tenta novamente mais tarde.",
-    "vozVipExclusivo": "👑 *!voz é exclusivo para VIPs!*\n\nOs VIPs podem transcrever áudios ilimitadamente.\n_Compra VIP: *{prefixo}vip*_",
-    "vozApenasAdmin": "🤖 Apenas admins podem usar comandos de IA neste grupo.",
-    "vozSemTexto": "🎙️ Ex: *{prefixo}voz Conta uma piada rápida*",
-    "vozFallback": "🎙️ _(áudio indisponível)_\n\n{resposta}",
-    "resumirSemCita": "❌ Cita a mensagem que queres resumir.",
-    "resumirResposta": "📝 *Resumo:*\n\n{resposta}",
-    "traduzirVipExclusivo": "👑 *!traduzir é exclusivo para VIPs!*\n\nOs VIPs podem traduzir textos ilimitadamente.\n_Compra VIP: *{prefixo}vip*_",
-    "traduzirSemTexto": "❌ Ex: {prefixo}traduzir Hello world",
-    "traduzirSemResposta": "❌ Não foi possível traduzir. Tenta novamente.",
-    "traduzirResposta": "🌐 *Tradução* _[{idioma} → pt-BR]_:\n\n{traducao}",
-    "traduzirErro": "❌ Erro ao traduzir. Verifica a ligação à internet.",
-    "debugTitulo": "🔍 *Debug Auth*\n\n*Remetente raw:* {sender}\n*senderNum:* {senderNum}\n*numeroDono (config):* {numeroDono}\n*isOwner:* {isOwner}{fixOwner}\n\n*Bot JID:* {botJid}\n*Bot LID capturado:* {botLid}{fixBot}\n*botNum:* {botNum}\n*Bot no grupo:* {botNoGrupo}\n*isBotAdmin:* {isBotAdmin}\n\n*Participantes:*\n{lista}",
-    "debugFixOwner": "\n⚙️ _Se isOwner=false: muda \"numeroDono\" no config.json para: {senderNum}_",
-    "debugFixBot": "\n⚙️ _Bot LID ainda não capturado — envia qualquer mensagem num grupo para capturar_",
-    "dmVipExclusivo": "👑 *Comandos no privado são exclusivos para VIPs!*\n\nPara usar comandos aqui precisas ser VIP.\n\n📋 Ver planos: *{prefixo}vip*\n💰 Apoiar o bot: *{prefixo}apoiar*",
-    "cmdNaoEncontradoSugestao": "❌ Comando *{prefixo}{command}* não encontrado.\n\n💡 Quiseste dizer *{prefixo}{sugestao}*? _({pct}% de semelhança)_\n\n_Usa *{prefixo}menu* para ver todos os comandos._",
-    "cmdNaoEncontrado": "❌ Comando *{prefixo}{command}* não encontrado.\n\n_Usa *{prefixo}menu* para ver todos os comandos._"
   }
 }

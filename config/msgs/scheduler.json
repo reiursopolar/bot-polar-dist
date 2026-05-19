@@ -1,0 +1,8 @@
+{
+  "_info": "Mensagens automáticas do agendador (abrir/fechar grupo, etc).\n  Podes personalizar as mensagens de abertura e fecho do grupo.",
+  "scheduler": {
+    "iniciado": "⏰ Scheduler iniciado.",
+    "grupoAberto": "🔓 Grupo aberto automaticamente. Bom dia a todos!",
+    "grupoFechado": "🔒 Grupo fechado automaticamente. Até amanhã!"
+  }
+}

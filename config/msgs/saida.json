@@ -1,0 +1,11 @@
+{
+  "_info": "Mensagens do sistema de saída.\n  Variáveis: {numero} {membros} {legenda}",
+  "saida": {
+    "legendaPadrao": "😢 @{numero} saiu do grupo...\nAgora somos *{membros}* membros.",
+    "ativada": "✅ *Saída ativada!*",
+    "desativada": "❌ *Saída desativada.*",
+    "fundoGuardado": "✅ *Fundo da saída guardado!*",
+    "fundoRemovido": "📸 Saída voltou ao modo *foto de perfil*.",
+    "legendaAtualizada": "✅ *Legenda de saída atualizada!*\n\n_{legenda}_"
+  }
+}
