@@ -24,12 +24,23 @@ FICHEIROS DISPONÍVEIS
 ────────────────────────────────────────────────
 VARIÁVEIS (substituídas automaticamente)
 ────────────────────────────────────────────────
-  {p}  ou  {prefix}  →  prefixo do bot  (ex: !)
-  {n}  ou  {nome}    →  nome do bot     (ex: Polar)
+  Todos os ficheiros:
+    {p}  ou  {prefix}  →  prefixo do bot  (ex: !)
+    {n}  ou  {nome}    →  nome do bot     (ex: Polar)
 
-Exemplo de uso:
-  › {p}ping → Testar o bot
-  _Bot: {n}_
+  Apenas menu.txt (variáveis dinâmicas):
+    {saudacao}  →  Bom dia / Boa tarde / Boa noite
+    {usuario}   →  número de quem usou !menu
+    {membros}   →  total de membros do grupo
+    {cmds}      →  total de comandos disponíveis
+
+Exemplo (menu.txt):
+  ┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+  ┃  🤖 *{n}*
+  ┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  {saudacao}, @{usuario}! 👋
+  👥 *{membros}* membros  ·  ⚡ *{cmds}* cmds
 
 ────────────────────────────────────────────────
 COMO EDITAR

@@ -1,3 +1,11 @@
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃  🤖 *{n}*
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+{saudacao}, @{usuario}! 👋
+👥 *{membros}* membros  ·  ⚡ *{cmds}* cmds
+────────────────────────
+
 *📂 CATEGORIAS*
   🛡️ `{p}menuadmin` → Moderação
   🚀 `{p}menusistemas` → Sistemas
