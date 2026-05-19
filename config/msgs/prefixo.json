@@ -1,6 +1,6 @@
 {
   "_info": "Mensagem exibida quando alguém envia apenas o prefixo do bot (ex: '!').\n  Variáveis disponíveis: {prefixo} {nomeBot} {menu}",
   "prefixo": {
-    "soPrefixo": "👋 Olá! Usa *{menu}* para ver todos os comandos disponíveis."
+    "soPrefixo": "👋 Olá! Sou o *{nomeBot}*!\n\n🔤 O meu prefixo é *{prefixo}*\n📋 Usa *{menu}* para ver todos os comandos disponíveis 😊"
   }
 }
