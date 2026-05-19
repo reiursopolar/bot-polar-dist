@@ -1,0 +1,8 @@
+# Mensagem enviada quando o utilizador usa um comando que não existe.
+# Variáveis disponíveis: {prefixo} {comando} {menu}
+# Quando existe um comando parecido, o bot adiciona automaticamente em baixo:
+#   💡 Quiseste dizer *!{sugestao}*? ({pct}% de semelhança)
+
+❌ Comando *{prefixo}{comando}* não encontrado.
+
+_Usa *{menu}* para ver todos os comandos._

@@ -1,0 +1,7 @@
+# Mensagem enviada quando alguém manda apenas o prefixo do bot (ex: !)
+# Variáveis disponíveis: {prefixo} {nomeBot} {menu}
+
+👋 Olá! Sou o *{nomeBot}*!
+
+🔤 O meu prefixo é *{prefixo}*
+📋 Usa *{menu}* para ver todos os comandos disponíveis 😊
