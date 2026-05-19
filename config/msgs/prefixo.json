@@ -1,6 +1,8 @@
 {
-  "_info": "Mensagem exibida quando alguém envia apenas o prefixo do bot (ex: '!').\n  Variáveis disponíveis: {prefixo} {nomeBot} {menu}",
+  "_info": "Mensagens do prefixo do bot.\n  Variáveis: {prefixo} {nomeBot} {menu} {comando} {sugestao} {pct}",
   "prefixo": {
-    "soPrefixo": "👋 Olá! Sou o *{nomeBot}*!\n\n🔤 O meu prefixo é *{prefixo}*\n📋 Usa *{menu}* para ver todos os comandos disponíveis 😊"
+    "soPrefixo": "👋 Olá! Sou o *{nomeBot}*!\n\n🔤 O meu prefixo é *{prefixo}*\n📋 Usa *{menu}* para ver todos os comandos disponíveis 😊",
+    "naoEncontrado": "❌ Comando *{prefixo}{comando}* não encontrado.\n\n_Usa *{menu}* para ver todos os comandos._",
+    "naoEncontradoSugestao": "❌ Comando *{prefixo}{comando}* não encontrado.\n\n💡 Quiseste dizer *{prefixo}{sugestao}*? _({pct}% de semelhança)_\n\n_Usa *{menu}* para ver todos os comandos._"
   }
 }
