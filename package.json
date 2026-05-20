@@ -7,6 +7,7 @@
   "scripts": {
     "start": "bash start.sh",
     "dev": "node index.js",
+    "build": "bash build.sh",
     "postinstall": "npm rebuild better-sqlite3 --no-fund || true"
   },
   "dependencies": {
@@ -24,5 +25,8 @@
     "node-cache": "^5.1.2",
     "pino": "^9.2.0",
     "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^4.1.1"
   }
 }
