@@ -230,20 +230,39 @@ async function handleDashboard(request, env, pathname) {
 
   const kv = env.POLAR_LICENSES
 
+  // ── Helpers PRG (Post-Redirect-Get) ──────────────────────────────────
+  // Após qualquer ação POST, redireciona com 303 e guarda o flash num cookie.
+  // O browser faz GET /dashboard, lê o cookie, apaga-o e mostra a mensagem.
+  // Assim ao refrescar nunca se resubmete o formulário.
+  function _getFlash() {
+    const hdr = request.headers.get('Cookie') ?? ''
+    for (const part of hdr.split(';')) {
+      const eq = part.indexOf('=')
+      if (eq === -1) continue
+      if (part.slice(0, eq).trim() === 'polar_flash')
+        return decodeURIComponent(part.slice(eq + 1).trim())
+    }
+    return ''
+  }
+  function _flashRedirect(msg) {
+    return new Response(null, {
+      status: 303,
+      headers: {
+        Location: '/dashboard',
+        'Set-Cookie': `polar_flash=${encodeURIComponent(msg)}; HttpOnly; SameSite=Strict; Max-Age=60; Path=/dashboard`,
+      }
+    })
+  }
+
   // Acções de formulário
   if (pathname === '/dashboard/action' && request.method === 'POST') {
     const form   = await request.formData()
     const action = form.get('action')
 
-    async function page(flash = '') {
-      const [all, logs] = await Promise.all([getAllLicenses(kv), getRecentLogs(kv)])
-      return dashboardPage(all, flash, logs, criadorPhone)
-    }
-
     if (action === 'create') {
       const cliente = (form.get('cliente') ?? '').trim()
       const dias    = parseInt(form.get('dias') ?? '30', 10) || 30
-      if (!cliente) return page('❌ Nome do cliente obrigatório.')
+      if (!cliente) return _flashRedirect('❌ Nome do cliente obrigatório.')
       const { key, keyId, exp } = await gerarChave(dias, cliente, ed25519Jwk)
       await createLicense(kv, keyId, {
         key, cliente,
@@ -254,7 +273,7 @@ async function handleDashboard(request, env, pathname) {
         revogada  : false, revokedAt: null, fraude: null, phoneReset: null,
       })
       await appendLog(kv, { action: 'key_criada', keyId, cliente, source: 'dashboard' })
-      return page(`✅ Licença criada para <b>${cliente}</b> (${dias} dias):<br><br><code>${key}</code>`)
+      return _flashRedirect(`✅ Licença criada para <b>${cliente}</b> (${dias} dias):<br><br><code>${key}</code>`)
     }
 
     if (action === 'revoke') {
@@ -262,7 +281,7 @@ async function handleDashboard(request, env, pathname) {
       const before = await getLicense(kv, keyId)
       await patchLicense(kv, keyId, { revogada: true, revokedAt: new Date().toISOString() })
       await appendLog(kv, { action: 'key_revogada', keyId, cliente: before?.cliente, source: 'dashboard' })
-      return page(`✅ Chave <code>${keyId}</code> revogada.`)
+      return _flashRedirect(`✅ Chave <code>${keyId}</code> revogada.`)
     }
 
     if (action === 'reset-phone') {
@@ -274,14 +293,14 @@ async function handleDashboard(request, env, pathname) {
         revogada: false, revokedAt: null, fraude: null,
       })
       await appendLog(kv, { action: 'reset_phone', keyId, cliente: before?.cliente, source: 'dashboard', anterior: before?.botPhone })
-      return page(`✅ Phone da chave <code>${keyId}</code> limpo.`)
+      return _flashRedirect(`✅ Phone da chave <code>${keyId}</code> limpo.`)
     }
 
     if (action === 'extend') {
       const keyId     = form.get('keyId') ?? ''
       const diasExtra = parseInt(form.get('dias') ?? '30', 10) || 30
       const lic       = await getLicense(kv, keyId)
-      if (!lic) return page('❌ Chave não encontrada.')
+      if (!lic) return _flashRedirect('❌ Chave não encontrada.')
       const { key, exp } = await gerarChaveComId(diasExtra, lic, ed25519Jwk)
       await patchLicense(kv, keyId, {
         key,
@@ -289,7 +308,7 @@ async function handleDashboard(request, env, pathname) {
         diasTotal: (lic.diasTotal ?? 0) + diasExtra,
       })
       await appendLog(kv, { action: 'key_extendida', keyId, cliente: lic.cliente, source: 'dashboard', diasAdded: diasExtra })
-      return page(`✅ Chave <code>${keyId}</code> estendida +${diasExtra} dias.<br><br>Nova chave para enviar ao cliente:<br><code>${key}</code>`)
+      return _flashRedirect(`✅ Chave <code>${keyId}</code> estendida +${diasExtra} dias.<br><br>Nova chave para enviar ao cliente:<br><code>${key}</code>`)
     }
 
     if (action === 'delete') {
@@ -297,16 +316,26 @@ async function handleDashboard(request, env, pathname) {
       const lic   = await getLicense(kv, keyId)
       await deleteLicense(kv, keyId)
       await appendLog(kv, { action: 'key_apagada', keyId, cliente: lic?.cliente, source: 'dashboard' })
-      return page(`✅ Chave <code>${keyId}</code> apagada permanentemente.`)
+      return _flashRedirect(`✅ Chave <code>${keyId}</code> apagada permanentemente.`)
     }
 
     return new Response('Bad Request', { status: 400 })
   }
 
-  // GET /dashboard
+  // GET /dashboard — lê e apaga o flash cookie
   if (pathname === '/dashboard') {
+    const flash = _getFlash()
     const [all, logs] = await Promise.all([getAllLicenses(kv), getRecentLogs(kv)])
-    return dashboardPage(all, '', logs, criadorPhone)
+    const page  = dashboardPage(all, flash, logs, criadorPhone)
+    // Apagar o flash cookie após mostrar (Max-Age=0)
+    // Constrói nova Response mantendo o body e adicionando o Set-Cookie
+    return new Response(page.body, {
+      status : page.status,
+      headers: {
+        'Content-Type': 'text/html;charset=utf-8',
+        'Set-Cookie': 'polar_flash=; Max-Age=0; Path=/dashboard; HttpOnly; SameSite=Strict',
+      }
+    })
   }
 
   // GET /dashboard/tel/:keyId — painel de telemetria de um cliente
