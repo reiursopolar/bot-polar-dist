@@ -1,8 +1,8 @@
 // src/index.js — fetch handler principal do Cloudflare Worker
 import { verifyBotRequest, verifyDashboardCookie, makeSessionCookie } from './auth.js'
-import { getLicense, createLicense, patchLicense, getAllLicenses, deleteLicense, appendLog, getRecentLogs } from './kv.js'
+import { getLicense, createLicense, patchLicense, getAllLicenses, deleteLicense, appendLog, getRecentLogs, getTelemetry, patchTelemetry } from './kv.js'
 import { gerarChave, gerarChaveComId } from './keys.js'
-import { loginPage, dashboardPage } from './dashboard.js'
+import { loginPage, dashboardPage, telemetriaPage } from './dashboard.js'
 
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
@@ -159,6 +159,38 @@ async function handleApi(request, env, pathname) {
   return new Response('Method Not Allowed', { status: 405 })
 }
 
+// ── Router de telemetria (separado para não misturar com license routes) ──
+async function handleTelemetry(request, env, pathname) {
+  const kv        = env.POLAR_LICENSES
+  const isCreator = !!env.CREATOR_TOKEN && request.headers.get('X-Creator-Token') === env.CREATOR_TOKEN
+
+  const m = pathname.match(/^\/api\/telemetry\/([a-f0-9]{8})$/)
+  if (!m) return new Response('Not Found', { status: 404 })
+  const telKeyId = m[1]
+
+  if (!isCreator && getBearerKeyId(request) !== telKeyId) return FORBIDDEN()
+
+  if (request.method === 'GET') {
+    if (!isCreator) return FORBIDDEN()
+    return json(await getTelemetry(kv, telKeyId) ?? {})
+  }
+
+  if (request.method === 'PATCH') {
+    const raw = await request.json()
+    const payload = {}
+    if (typeof raw.version       === 'string') payload.version       = raw.version.slice(0, 50)
+    if (typeof raw.uptimeSince   === 'string') payload.uptimeSince   = raw.uptimeSince
+    if (typeof raw.lastHeartbeat === 'string') payload.lastHeartbeat = raw.lastHeartbeat
+    if (raw.cmdStats && typeof raw.cmdStats === 'object' && !Array.isArray(raw.cmdStats))
+      payload.cmdStats = raw.cmdStats
+    if (Array.isArray(raw.errors))
+      payload.errors = raw.errors.slice(0, 5)
+    return json(await patchTelemetry(kv, telKeyId, payload))
+  }
+
+  return new Response('Method Not Allowed', { status: 405 })
+}
+
 // ── Router do dashboard ───────────────────────────────────────────────
 async function handleDashboard(request, env, pathname) {
   const secret       = env.HMAC_SECRET          // cookie do dashboard
@@ -277,6 +309,14 @@ async function handleDashboard(request, env, pathname) {
     return dashboardPage(all, '', logs, criadorPhone)
   }
 
+  // GET /dashboard/tel/:keyId — painel de telemetria de um cliente
+  const mTel = pathname.match(/^\/dashboard\/tel\/([a-f0-9]{8})$/)
+  if (mTel && request.method === 'GET') {
+    const telKeyId = mTel[1]
+    const [lic, tel] = await Promise.all([getLicense(kv, telKeyId), getTelemetry(kv, telKeyId)])
+    return telemetriaPage(lic, tel ?? {}, criadorPhone)
+  }
+
   return new Response('Not Found', { status: 404 })
 }
 
@@ -286,6 +326,12 @@ export default {
     try {
       const url      = new URL(request.url)
       const pathname = url.pathname
+
+      if (pathname.startsWith('/api/telemetry/')) {
+        const valid = await verifyBotRequest(request, env.ED25519_PRIVATE_JWK, env.CREATOR_TOKEN)
+        if (!valid) return new Response('Unauthorized', { status: 401 })
+        return handleTelemetry(request, env, pathname)
+      }
 
       if (pathname.startsWith('/api/')) {
         const valid = await verifyBotRequest(request, env.ED25519_PRIVATE_JWK, env.CREATOR_TOKEN)

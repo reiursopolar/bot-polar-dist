@@ -60,3 +60,30 @@ export async function getRecentLogs(kv) {
   const raw = await kv.get('log:recent')
   return raw ? JSON.parse(raw) : []
 }
+
+// ── Telemetria por keyId ──────────────────────────────────────────────
+export async function getTelemetry(kv, keyId) {
+  const val = await kv.get(`tel:${keyId}`)
+  return val ? JSON.parse(val) : null
+}
+
+export async function patchTelemetry(kv, keyId, updates) {
+  const existing = await getTelemetry(kv, keyId) ?? {}
+
+  if (updates.cmdStats && typeof updates.cmdStats === 'object' && !Array.isArray(updates.cmdStats)) {
+    const prev = existing.cmdStats ?? {}
+    for (const [cmd, n] of Object.entries(updates.cmdStats)) {
+      if (typeof n === 'number' && n > 0) prev[cmd] = (prev[cmd] ?? 0) + n
+    }
+    updates = { ...updates, cmdStats: prev }
+  }
+
+  if (Array.isArray(updates.errors)) {
+    const prev = existing.errors ?? []
+    updates = { ...updates, errors: [...updates.errors, ...prev].slice(0, 50) }
+  }
+
+  const merged = { ...existing, ...updates }
+  await kv.put(`tel:${keyId}`, JSON.stringify(merged))
+  return merged
+}

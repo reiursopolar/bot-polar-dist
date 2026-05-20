@@ -241,6 +241,7 @@ export function dashboardPage(licenses, flash = '', logs = [], criadorPhone = ''
           <input type="hidden" name="keyId" value="${esc(lic.keyId)}">
           <button class="btn-sm btn-red" type="submit">Apagar</button>
         </form>
+        <a href="/dashboard/tel/${esc(lic.keyId)}" target="_blank" class="btn-sm" style="text-decoration:none;padding:3px 8px">📊</a>
       </td>
     </tr>`
   }).join('')
@@ -341,5 +342,110 @@ ${flash ? `<div class="flash">${flash}</div>` : ''}
 </div>
 
 <script>${JS}</script>
+</body></html>`)
+}
+
+export function telemetriaPage(lic, tel, criadorPhone = '') {
+  const nome    = esc(lic?.cliente ?? '?')
+  const keyId   = esc(lic?.keyId  ?? '?')
+  const now     = Date.now()
+
+  function dt(iso) {
+    if (!iso) return '<span style="color:#333">—</span>'
+    const d = new Date(iso)
+    return d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',second:'2-digit'})
+  }
+
+  function ago(iso) {
+    if (!iso) return '—'
+    const s = Math.floor((now - new Date(iso).getTime()) / 1000)
+    if (s < 60)    return `${s}s atrás`
+    if (s < 3600)  return `${Math.floor(s/60)}m atrás`
+    if (s < 86400) return `${Math.floor(s/3600)}h atrás`
+    return `${Math.floor(s/86400)}d atrás`
+  }
+
+  const cmdStats = tel.cmdStats ?? {}
+  const topCmds  = Object.entries(cmdStats)
+    .sort((a,b) => b[1]-a[1])
+    .slice(0, 20)
+
+  const cmdRows = topCmds.length
+    ? topCmds.map(([cmd, n], i) => {
+        const maxN  = topCmds[0][1]
+        const pct   = Math.round(n / maxN * 100)
+        return `<tr>
+          <td style="color:#bbb;padding:5px 8px">#${i+1}</td>
+          <td style="padding:5px 8px"><code style="color:#55aaff">${esc(cmd)}</code></td>
+          <td style="padding:5px 8px;color:#7aff99;font-variant-numeric:tabular-nums">${n.toLocaleString()}</td>
+          <td style="padding:5px 8px;min-width:120px">
+            <div style="background:#1a1a2e;border-radius:3px;height:6px;overflow:hidden">
+              <div style="background:#00d4ff;width:${pct}%;height:100%"></div>
+            </div>
+          </td>
+        </tr>`
+      }).join('')
+    : `<tr><td colspan="4" style="padding:24px;text-align:center;color:#333">Sem dados de comandos ainda.</td></tr>`
+
+  const errors = tel.errors ?? []
+  const errRows = errors.length
+    ? errors.map(e => `<tr>
+        <td style="padding:4px 8px;color:#555;font-size:10px;white-space:nowrap">${dt(e.ts)}</td>
+        <td style="padding:4px 8px;color:#ff5566">${esc(e.type)}</td>
+        <td style="padding:4px 8px;color:#ccc;max-width:300px;word-break:break-word">${esc(e.msg)}</td>
+        <td style="padding:4px 8px;color:#666;font-size:10px">${esc(e.ctx)}</td>
+      </tr>`).join('')
+    : `<tr><td colspan="4" style="padding:24px;text-align:center;color:#333">Sem erros registados.</td></tr>`
+
+  const totalCmds = Object.values(cmdStats).reduce((a,b)=>a+b,0)
+
+  return htmlRes(`<!DOCTYPE html><html><head><meta charset=utf-8><title>📊 ${nome} — Telemetria</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>${CSS}
+.tel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:800px){.tel-grid{grid-template-columns:repeat(2,1fr)}}
+</style></head><body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>📊 TELEMETRIA — ${nome}</h1>
+    <div class="header-meta">Key ID: <code style="color:var(--blue)">${keyId}</code></div>
+  </div>
+  <a href="/dashboard" class="logout">← Dashboard</a>
+</div>
+
+<div class="tel-grid">
+  <div class="stat"><div class="stat-n" style="font-size:20px">${esc(tel.version ?? '—')}</div><div class="stat-l">Versão</div></div>
+  <div class="stat"><div class="stat-n" style="font-size:18px;color:var(--green)">${tel.lastHeartbeat ? ago(tel.lastHeartbeat) : '—'}</div><div class="stat-l">Último heartbeat</div></div>
+  <div class="stat"><div class="stat-n" style="font-size:18px;color:var(--blue)">${totalCmds.toLocaleString()}</div><div class="stat-l">Comandos totais</div></div>
+  <div class="stat"><div class="stat-n" style="font-size:18px;color:${errors.length?'var(--red)':'var(--green)'}">${errors.length}</div><div class="stat-l">Erros registados</div></div>
+</div>
+
+${tel.uptimeSince ? `<div style="margin-bottom:16px;font-size:11px;color:#555">Online desde: <span style="color:#888">${dt(tel.uptimeSince)}</span></div>` : ''}
+
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">Top Comandos</div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Comando</th><th>Usos</th><th>Frequência</th></tr></thead>
+        <tbody>${cmdRows}</tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div class="card-title">Erros Recentes <span style="color:var(--text3);font-weight:normal">(últimos 50)</span></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Data/Hora</th><th>Tipo</th><th>Mensagem</th><th>Contexto</th></tr></thead>
+        <tbody>${errRows}</tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 </body></html>`)
 }
