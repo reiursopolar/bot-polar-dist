@@ -142,8 +142,8 @@ while true; do
 
   echo -e "\n${YELLOW}  ⚠  Bot encerrado (código ${EXIT_CODE}). A atualizar e reiniciar...${NC}\n"
 
-  # Atualizar antes de reiniciar — se houve update, reinstalar deps
-  auto_atualizar && verificar_deps
+  auto_atualizar
+  verificar_deps
 
   sleep 2
 done
