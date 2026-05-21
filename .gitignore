@@ -47,3 +47,14 @@ database/backgrounds/
 .claude/
 *.db-shm
 *.db-wal
+
+# ── Scripts de migração (contêm tokens/chaves — NUNCA commitar) ──────
+migrate_keys_ed25519.mjs
+migrate_kv_to_d1.mjs
+migration_data.sql
+tmp_versions.json
+
+# ── Ficheiros acidentais do wrangler ─────────────────────────────────
+polar-license-api/cd
+polar-license-api/flags
+polar-license-api/npx
