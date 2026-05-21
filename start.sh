@@ -113,7 +113,9 @@ instalar_deps() {
 
 verificar_deps() {
   if [ ! -d "node_modules" ]; then
-    echo -e "${YELLOW}  ↗  Primeira instalação...${NC}"
+    echo -e "${YELLOW}  ↗  Primeira instalação detectada.${NC}"
+    echo -e "${YELLOW}  ⏳  Este processo pode demorar entre 3 a 10 minutos${NC}"
+    echo -e "${YELLOW}     (a compilar módulos nativos — não feches o painel).${NC}\n"
     instalar_deps
   elif [ "package.json" -nt "node_modules" ]; then
     echo -e "${YELLOW}  ↗  package.json atualizado — a sincronizar dependências...${NC}"
