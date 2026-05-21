@@ -131,47 +131,8 @@ verificar_deps() {
   fi
 }
 
-# ── Verificar pasta polar-license-api ────────────────────────────────
-verificar_api() {
-  if [ -d "polar-license-api" ]; then
-    return 0
-  fi
-
-  echo -e "${YELLOW}  ⚠  Pasta polar-license-api não encontrada — a baixar...${NC}"
-
-  if git rev-parse --git-dir > /dev/null 2>&1; then
-    # Modo git: a pasta devia ter vindo com o reset -- tentar de novo
-    git checkout "origin/${DIST_BRANCH}" -- polar-license-api 2>/dev/null && {
-      echo -e "${GREEN}  ✓  polar-license-api restaurada via git!${NC}"
-      return 0
-    }
-  fi
-
-  # Modo download: extrair só a pasta do zip
-  TMP_ZIP="/tmp/polar-api-$$.zip"
-  TMP_DIR="/tmp/polar-api-$$"
-  ZIP_URL="https://github.com/${DIST_REPO}/archive/refs/heads/${DIST_BRANCH}.zip"
-
-  if curl -sL --max-time 60 -o "$TMP_ZIP" "$ZIP_URL" 2>/dev/null; then
-    mkdir -p "$TMP_DIR"
-    if unzip -q -o "$TMP_ZIP" -d "$TMP_DIR" 2>/dev/null; then
-      EXTRACTED=$(ls "$TMP_DIR" | head -1)
-      if [ -n "$EXTRACTED" ] && [ -d "$TMP_DIR/$EXTRACTED/polar-license-api" ]; then
-        cp -r "$TMP_DIR/$EXTRACTED/polar-license-api" ./
-        echo -e "${GREEN}  ✓  polar-license-api baixada com sucesso!${NC}"
-        rm -rf "$TMP_ZIP" "$TMP_DIR"
-        return 0
-      fi
-    fi
-    rm -rf "$TMP_ZIP" "$TMP_DIR"
-  fi
-
-  echo -e "${RED}  ✗  Não foi possível baixar polar-license-api (sem rede?).${NC}"
-}
-
 # ── Arranque: atualizar + instalar deps ──────────────────────────────
 auto_atualizar
-verificar_api
 verificar_deps
 
 # ── Auto-restart com atualização automática em cada reinício ─────────
