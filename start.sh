@@ -117,19 +117,30 @@ verificar_deps() {
     echo -e "${YELLOW}  ⏳  Este processo pode demorar entre 3 a 10 minutos${NC}"
     echo -e "${YELLOW}     (a compilar módulos nativos — não feches o painel).${NC}\n"
     instalar_deps
-  elif [ "package.json" -nt "node_modules" ]; then
-    echo -e "${YELLOW}  ↗  package.json atualizado — a sincronizar dependências...${NC}"
+    md5sum package.json > node_modules/.pkg_hash 2>/dev/null || true
+    return
+  fi
+
+  # Comparar hash do package.json (não timestamp — git reset atualiza timestamps sem mudar conteúdo)
+  HASH_ATUAL=$(md5sum package.json 2>/dev/null | cut -d' ' -f1)
+  HASH_ANTERIOR=$(cat node_modules/.pkg_hash 2>/dev/null | cut -d' ' -f1)
+
+  if [ "$HASH_ATUAL" != "$HASH_ANTERIOR" ]; then
+    echo -e "${YELLOW}  ↗  Dependências alteradas — a sincronizar...${NC}"
     instalar_deps
+    md5sum package.json > node_modules/.pkg_hash 2>/dev/null || true
+    return
+  fi
+
+  # Dependências OK — verificar só better-sqlite3
+  NODE_VER=$(node -e "process.stdout.write(process.version)")
+  SQLITE_OK=$(node -e "try{require('./node_modules/better-sqlite3');process.stdout.write('ok')}catch(e){process.stdout.write('no')}" 2>/dev/null)
+  if [ "$SQLITE_OK" != "ok" ]; then
+    echo -e "${YELLOW}  ↗  better-sqlite3 precisa de recompilação (Node ${NODE_VER})...${NC}"
+    npm rebuild better-sqlite3 --no-fund 2>&1 | grep -v "^npm warn"
+    echo -e "${GREEN}  ✓  Compilado!${NC}\n"
   else
-    NODE_VER=$(node -e "process.stdout.write(process.version)")
-    SQLITE_OK=$(node -e "try{require('./node_modules/better-sqlite3');process.stdout.write('ok')}catch(e){process.stdout.write('no')}" 2>/dev/null)
-    if [ "$SQLITE_OK" != "ok" ]; then
-      echo -e "${YELLOW}  ↗  better-sqlite3 precisa de recompilação (Node ${NODE_VER})...${NC}"
-      npm rebuild better-sqlite3 --no-fund 2>&1 | grep -v "^npm warn"
-      echo -e "${GREEN}  ✓  Compilado!${NC}\n"
-    else
-      echo -e "${GREEN}  ✓  Dependências OK (Node ${NODE_VER})${NC}\n"
-    fi
+    echo -e "${GREEN}  ✓  Dependências OK (Node ${NODE_VER})${NC}\n"
   fi
 }
 
