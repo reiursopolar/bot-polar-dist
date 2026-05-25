@@ -33,22 +33,5 @@
       "preco": 8,
       "dias": 30
     }
-  },
-  "bot": {
-    "30dias": {
-      "nome": "Bot 30 dias",
-      "preco": 25,
-      "dias": 30
-    },
-    "90dias": {
-      "nome": "Bot 90 dias",
-      "preco": 99.9,
-      "dias": 90
-    },
-    "180dias": {
-      "nome": "Bot 180 dias",
-      "preco": 179.9,
-      "dias": 180
-    }
   }
 }
