@@ -15,6 +15,16 @@
       "nome": "Plano Mensal",
       "preco": 29.9,
       "dias": 30
+    },
+    "60dias": {
+      "nome": "Plano Bimestral",
+      "preco": 54.9,
+      "dias": 60
+    },
+    "90dias": {
+      "nome": "Plano Trimestral",
+      "preco": 79.9,
+      "dias": 90
     }
   },
   "vip": {
@@ -32,6 +42,16 @@
       "nome": "VIP Mensal",
       "preco": 8,
       "dias": 30
+    },
+    "60dias": {
+      "nome": "VIP Bimestral",
+      "preco": 14,
+      "dias": 60
+    },
+    "90dias": {
+      "nome": "VIP Trimestral",
+      "preco": 20,
+      "dias": 90
     }
   }
 }
