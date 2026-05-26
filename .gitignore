@@ -27,6 +27,9 @@ config/licenca-inst.json
 # Nunca sobrescrever no update — o dono configura via comandos no bot
 config/loja.json
 
+# ── Menus personalizados (editados no servidor — nunca sobrescrever) ───
+config/menus/
+
 # ── Ficheiros legados (substituídos pela pasta config/) ───────────────
 /config.json
 /loja.json
