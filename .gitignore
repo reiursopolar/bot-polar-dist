@@ -8,6 +8,7 @@ session/
 database/polar.db
 database/polar.db-shm
 database/polar.db-wal
+database/backups/
 database/groups/
 database/lid_map.json
 database/ia_memoria.json
