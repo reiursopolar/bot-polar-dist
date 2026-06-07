@@ -36,6 +36,7 @@ config/menus/
 /loja.json
 /mensagens.json
 config/mensagens.json
+config/msgs-custom.json
 
 # ── Logs e temporários ────────────────────────────────────────────────
 *.log
