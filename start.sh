@@ -144,9 +144,18 @@ verificar_deps() {
   fi
 }
 
+# ── Patch ao Baileys: null-guard me.lid (entrega no PV) ──────────────
+# Corre SEMPRE após instalar/atualizar deps e ANTES de arrancar o bot, para
+# garantir que o messages-send.js fica corrigido mesmo quando o npm install não
+# correu (package.json sem alterações). É idempotente (não repete se já aplicado).
+aplicar_patches() {
+  [ -f "patches/baileys.cjs" ] && node patches/baileys.cjs 2>/dev/null || true
+}
+
 # ── Arranque: atualizar + instalar deps ──────────────────────────────
 auto_atualizar
 verificar_deps
+aplicar_patches
 
 # ── Auto-restart com atualização automática em cada reinício ─────────
 while true; do
@@ -157,6 +166,7 @@ while true; do
 
   auto_atualizar
   verificar_deps
+  aplicar_patches
 
   sleep 2
 done
